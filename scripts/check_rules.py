@@ -43,9 +43,17 @@ def validate(root, hotsheet=None):
     return len(expected)
 
 
+def validate_bootstrap(root):
+    if (root / 'CLAUDE.md').read_text() != '@AGENTS.md\n':
+        raise ValueError('CLAUDE.md must only import AGENTS.md; edit AGENTS.md instead')
+    if not (root / 'AGENTS.md').is_file():
+        raise ValueError('CLAUDE.md imports a missing AGENTS.md')
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--hotsheet', type=Path, help='compare bodies with a Hot Sheet checkout')
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
+    validate_bootstrap(root)
     print(f'Validated {validate(root, args.hotsheet)} selectable rules')

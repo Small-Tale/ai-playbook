@@ -14,9 +14,12 @@ does not require Rulesync, a network connection, or this checkout.
 
 The maintained sources are the direct Markdown children of `rules/`. Rulesync
 frontmatter is packaging; the body retains Hot Sheet's managed markers and version.
-`rules-manifest.json` records body hashes and the HS2 migration baseline. The existing
-root `AGENTS.md`, `CLAUDE.md`, and local Hot Sheet skills are preserved bootstrap
-instructions for contributors, not additional selectable rule sources.
+`rules-manifest.json` records body hashes and the HS2 migration baseline. The root
+`AGENTS.md` and local Hot Sheet skills are preserved bootstrap instructions for
+contributors, not additional selectable rule sources. `AGENTS.md` is the single source
+of contributor instructions for every AI tool: `CLAUDE.md` contains only the Claude
+Code import `@AGENTS.md`, and validation rejects any other content, so edit
+`AGENTS.md` instead.
 
 HS2-specific engineering policy (Kerf, providers, build gates, product terminology),
 plugin manifests, tool integrations, legacy migration bodies, and skill adapters stay

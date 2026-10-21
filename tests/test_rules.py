@@ -54,6 +54,23 @@ class RulesTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'baseline differs'):
             checker.validate(self.root, bundle)
 
+    def test_claude_imports_agents(self):
+        checker.validate_bootstrap(ROOT)
+        (self.root / 'AGENTS.md').write_text('Shared instructions.\n')
+        (self.root / 'CLAUDE.md').write_text('@AGENTS.md\n')
+        checker.validate_bootstrap(self.root)
+
+    def test_inlined_claude_instructions_are_rejected(self):
+        (self.root / 'AGENTS.md').write_text('Shared instructions.\n')
+        (self.root / 'CLAUDE.md').write_text('@AGENTS.md\n\nClaude-only drift.\n')
+        with self.assertRaisesRegex(ValueError, 'only import AGENTS.md'):
+            checker.validate_bootstrap(self.root)
+
+    def test_missing_import_target_is_rejected(self):
+        (self.root / 'CLAUDE.md').write_text('@AGENTS.md\n')
+        with self.assertRaisesRegex(ValueError, 'missing AGENTS.md'):
+            checker.validate_bootstrap(self.root)
+
 
 if __name__ == '__main__':
     unittest.main()
