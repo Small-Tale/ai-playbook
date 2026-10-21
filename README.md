@@ -1,0 +1,63 @@
+# Small Tale AI playbook
+
+Reusable Hot Sheet guidance maintained by Small Tale Inc. Projects may consume all
+or selected rules with Rulesync. Hot Sheet's built-in setup remains the default and
+does not require Rulesync, a network connection, or this checkout.
+
+| Selectable name | Section version | Purpose |
+| --- | --- | --- |
+| `hotsheet-ticket-driven-work` | 5 | Ticket lifecycle, follow-ups, evidence, and note hygiene |
+| `hotsheet-testing-philosophy` | 5 | Risk tiers, behavioral coverage, and verification |
+| `hotsheet-requirements-documentation` | 3 | Human requirements and concise AI summaries |
+| `hotsheet-visual-qa` | 1 | Real rendered inspection and evidence |
+| `hotsheet-workflow` | 63 | Hot Sheet CLI/MCP workflow, claims, phases, and confidence |
+
+The maintained sources are the direct Markdown children of `rules/`. Rulesync
+frontmatter is packaging; the body retains Hot Sheet's managed markers and version.
+`rules-manifest.json` records body hashes and the HS2 migration baseline. The existing
+root `AGENTS.md`, `CLAUDE.md`, and local Hot Sheet skills are preserved bootstrap
+instructions for contributors, not additional selectable rule sources.
+
+HS2-specific engineering policy (Kerf, providers, build gates, product terminology),
+plugin manifests, tool integrations, legacy migration bodies, and skill adapters stay
+in Hot Sheet 2. They are implementation contracts rather than general rule prose.
+
+## Ownership and changes
+
+Propose changes here through a reviewed commit or pull request. Change the source
+rule, increase its embedded section version, and update its manifest version and
+SHA-256 body hash together. Preserve managed marker names. A prose change that affects
+behavior requires downstream setup/refresh verification before release. Do not edit
+generated snapshots in Hot Sheet 2 independently; update its pinned source revision.
+
+Each release uses an annotated immutable `vMAJOR.MINOR.PATCH` tag. Never move or reuse
+a published tag. Increase major for removed/renamed rules or incompatible markers,
+minor for new rules or compatible behavior changes, and patch for corrections that
+preserve behavior. Section versions increase independently whenever a body changes.
+Consumers can pin a full commit SHA; a tag plus a committed Rulesync lockfile also
+records the exact resolved commit. `main` is a development branch, not an immutable pin.
+
+Before publishing, run the checks below and create the annotated release tag only on
+the verified commit, then push that commit and tag. Release notes list changed rule
+names, section versions, and downstream migration requirements.
+
+## Validation
+
+```sh
+python3 scripts/check_rules.py
+python3 -m unittest discover -s tests -q
+python3 scripts/check_rules.py --hotsheet ../hotsheet2
+```
+
+The last command reproduces the initial byte-for-byte migration comparison against
+the paths and baseline commit recorded in the manifest. After a deliberate upstream
+change, compare with a Hot Sheet checkout updated to that release instead.
+
+Rulesync discovers these flat files through its `rules` source selection. For example,
+use source `Small-Tale/ai-playbook@v1.0.0` with `rules: ["hotsheet-visual-qa"]`, or
+`rules: ["*"]`. Keep project-specific rules outside `.curated/`. See the
+[official source format](https://rulesync.dyoshikawa.com/guide/declarative-sources.html).
+Hot Sheet 2 documents opt-in installation and writer ownership in its setup guide.
+
+Repository orientation: [codebase map](docs/CODEBASE-MAP.md).
+Product scope and status: [requirements summary](docs/REQUIREMENTS-SUMMARY.md).
