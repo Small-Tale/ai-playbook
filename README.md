@@ -65,11 +65,13 @@ The last command reproduces the initial byte-for-byte migration comparison again
 the paths and baseline commit recorded in the manifest. After a deliberate upstream
 change, compare with a Hot Sheet checkout updated to that release instead.
 
-Rulesync discovers these flat files through its `rules` source selection. For example,
-use source `Small-Tale/ai-playbook@v1.0.0` with `rules: ["hotsheet-visual-qa"]`, or
-`rules: ["*"]`. Keep project-specific rules outside `.curated/`. See the
-[official source format](https://rulesync.dyoshikawa.com/guide/declarative-sources.html).
-Hot Sheet 2 documents opt-in installation and writer ownership in its setup guide.
+Rulesync discovers these flat files through its `rules` source selection. Hot Sheet's
+[validated consumer guide](https://github.com/Small-Tale/hotsheet2/blob/main/guidance/rulesync/README.md) provides all-rule and selected-rule examples,
+an exact committed lock, update/outdated commands, local override behavior, and reviewed
+migration/return paths. The tested Rulesync 38 Git transport uses `main` plus a committed
+lock because its initial raw-SHA and annotated-tag resolution have limitations; frozen
+installs retain the reviewed commit. Ordinary Hot Sheet setup remains offline and
+does not install or invoke Rulesync.
 
 Repository orientation: [codebase map](docs/CODEBASE-MAP.md).
 Product scope and status: [requirements summary](docs/REQUIREMENTS-SUMMARY.md).
