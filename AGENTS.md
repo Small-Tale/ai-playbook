@@ -1,6 +1,6 @@
 <!-- BEGIN hotsheet:agents-md -->
-<!-- hotsheet-shared-section: antigravity, codex, opencode -->
-<!-- hotsheet-instructions-version: 63 -->
+<!-- hotsheet-shared-section: antigravity, claude, codex, opencode -->
+<!-- hotsheet-instructions-version: 64 -->
 
 ## Hot Sheet — ticket workflow
 

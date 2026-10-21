@@ -21,6 +21,13 @@ of contributor instructions for every AI tool: `CLAUDE.md` contains only the Cla
 Code import `@AGENTS.md`, and validation rejects any other content, so edit
 `AGENTS.md` instead.
 
+Hot Sheet 2 setup and refresh leave a plain `@AGENTS.md` line untouched from commit
+`86b82e29` (HS2-HP1S4H) onward and keep the shared guidance in `AGENTS.md`. Older
+builds, including a running server's automatic refresh, append a `hotsheet:claude`
+block, which `check_rules.py` then rejects. Update Hot Sheet, restore `CLAUDE.md` to
+the single import line, and preview with `hotsheet-cli setup --diagnose --project .`,
+which is read-only.
+
 HS2-specific engineering policy (Kerf, providers, build gates, product terminology),
 plugin manifests, tool integrations, legacy migration bodies, and skill adapters stay
 in Hot Sheet 2. They are implementation contracts rather than general rule prose.
