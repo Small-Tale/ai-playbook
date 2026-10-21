@@ -42,8 +42,8 @@
     {
       "name": "hotsheet-workflow",
       "path": "rules/hotsheet-workflow.md",
-      "version": 63,
-      "sha256": "dbb35e1c18bf6af436f721f3a0cec6ed7c95846e916fc40d42db5c802657a23b",
+      "version": 64,
+      "sha256": "3867d18cc926d08932cb42d256824bd1a4d1ee1afa0f6fc251ae8f5457635815",
       "baseline_paths": [
         "plugins/claude/instructions.md",
         "plugins/codex/instructions.md",

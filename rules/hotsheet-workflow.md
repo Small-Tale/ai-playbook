@@ -4,7 +4,7 @@ targets: ["*"]
 description: "Hot Sheet workflow guidance"
 ---
 
-<!-- hotsheet-instructions-version: 63 -->
+<!-- hotsheet-instructions-version: 64 -->
 
 ## Hot Sheet — ticket workflow
 

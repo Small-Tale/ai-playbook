@@ -10,7 +10,7 @@ does not require Rulesync, a network connection, or this checkout.
 | `hotsheet-testing-philosophy` | 5 | Risk tiers, behavioral coverage, and verification |
 | `hotsheet-requirements-documentation` | 3 | Human requirements and concise AI summaries |
 | `hotsheet-visual-qa` | 1 | Real rendered inspection and evidence |
-| `hotsheet-workflow` | 63 | Hot Sheet CLI/MCP workflow, claims, phases, and confidence |
+| `hotsheet-workflow` | 64 | Hot Sheet CLI/MCP workflow, claims, phases, and confidence |
 
 The maintained sources are the direct Markdown children of `rules/`. Rulesync
 frontmatter is packaging; the body retains Hot Sheet's managed markers and version.
