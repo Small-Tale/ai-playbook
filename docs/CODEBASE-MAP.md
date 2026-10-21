@@ -9,6 +9,8 @@
 - `AGENTS.md`, `.agents/skills/`, `.claude/skills/`: preserved contributor bootstrap;
   `AGENTS.md` is the one instruction source for all AI tools.
 - `CLAUDE.md`: only `@AGENTS.md` (Claude Code import), enforced by `check_rules.py`.
+- `ruff.toml`: lint rules for `scripts/` and `tests/`; `.github/workflows/check.yml` runs
+  the pinned `ruff check .`, the validator, and the unit tests.
 - `README.md`: ownership, release policy, consumption, and verification commands.
 
 There is no application runtime or credential storage. Rule inputs are plain Markdown;

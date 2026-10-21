@@ -47,6 +47,8 @@ names, section versions, and downstream migration requirements.
 ## Validation
 
 ```sh
+python3 -m pip install ruff==0.17.1  # once; matches the CI pin
+ruff check .
 python3 scripts/check_rules.py
 python3 -m unittest discover -s tests -q
 python3 scripts/check_rules.py --hotsheet ../hotsheet2

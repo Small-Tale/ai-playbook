@@ -1,0 +1,9 @@
+# Lint configuration for scripts/ and tests/. Run: ruff check .
+target-version = "py312"
+line-length = 110
+
+[lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[lint.isort]
+force-sort-within-sections = true
