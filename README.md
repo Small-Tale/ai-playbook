@@ -24,11 +24,19 @@ does not require Rulesync, a network connection, or this checkout.
 | `kerf-ui-usage` | 1 | Kerf guidance retrieval order, gates, Web Awesome policy, component gaps |
 | `kerf-ui-upgrades` | 1 | Lockstep Kerf package upgrades |
 | `kerf-ui-catalog-demos` | 1 | Catalog demos are the production components, exercised for real |
+| `git-commit-and-push` | 1 | Commit shape, staging by path, history safety, declared push policy |
+| `release-scripts` | 1 | One resumable release command that tags; CI publishes from the tag |
+| `gitgist-release-notes` | 1 | gitgist for release notes and commit drafts, configured once |
+| `deployment-scripts` | 1 | Phased, re-runnable deploy script with SHA-tagged artifacts |
 
 Planned: `kerf-ui-interaction-defaults`, a pointer to the Kerf UI house-grammar document, lands
 when that document ships (`KF-Q4FMX5` in the Kerf store). Rules are opinionated by design;
 a project that adopts one deviates only at the project level for a compelling or necessary
 reason, recorded in its own conventions document.
+
+`git-commit-and-push` requires each adopting project to declare one of two named push
+policies (`push-per-ticket` or `push-per-batch`) in its instructions. The Hot Sheet
+workflow's own "pushing is up to this repository" sentence defers to that declaration.
 
 The maintained sources are the direct Markdown children of `rules/`. Rulesync
 frontmatter is packaging; the body retains Hot Sheet's managed markers and version.
@@ -41,7 +49,7 @@ Code import `@AGENTS.md`, and validation rejects any other content, so edit
 
 Rule names follow one convention. A rule owned by, or most closely associated with, one
 tool or technology carries that owner as its prefix (`hotsheet-*`, `kerf-ui-*`,
-`typescript-*`, `playwright-*`); a general rule has no prefix. The manifest's optional
+`typescript-*`, `playwright-*`, `gitgist-*`); a general rule has no prefix. The manifest's optional
 `owner` field names that prefix and validation enforces it; the optional `tags` field
 lists the languages and technologies a rule applies to, so a picker can filter by stack.
 Rules migrated from Hot Sheet 2 keep their original section names and record

@@ -220,6 +220,51 @@
         "typescript",
         "testing"
       ]
+    },
+    {
+      "name": "git-commit-and-push",
+      "path": "rules/git-commit-and-push.md",
+      "version": 1,
+      "sha256": "790e1a5fbc8f6d57aee67a367fa710ec33981d6b9b8fbdd7fba0ebf8427f3b38",
+      "tags": [
+        "general",
+        "git",
+        "process"
+      ]
+    },
+    {
+      "name": "release-scripts",
+      "path": "rules/release-scripts.md",
+      "version": 1,
+      "sha256": "b4752e6fc98c424e7d92d95436fc7b41db8e29864ae7537ce92281c835625df8",
+      "tags": [
+        "general",
+        "release",
+        "git"
+      ]
+    },
+    {
+      "name": "gitgist-release-notes",
+      "path": "rules/gitgist-release-notes.md",
+      "version": 1,
+      "sha256": "f5ecfa4c77b860c89f39e980d872bfa4d80019bbcec41cb72eb522432a9ccaf1",
+      "owner": "gitgist",
+      "tags": [
+        "gitgist",
+        "release",
+        "git"
+      ]
+    },
+    {
+      "name": "deployment-scripts",
+      "path": "rules/deployment-scripts.md",
+      "version": 1,
+      "sha256": "e90b94032c7acaf8b35b557241dcd8b7e1837c67f94de403767a3caaf13c5c44",
+      "tags": [
+        "general",
+        "deployment",
+        "infrastructure"
+      ]
     }
   ]
 }
