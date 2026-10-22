@@ -4,11 +4,11 @@ targets: ["*"]
 description: "Design-system-first UI construction: look it up, name the owner, earn every control"
 ---
 
-<!-- hotsheet:begin section=ui-composition v=1 -->
+<!-- hotsheet:begin section=ui-composition v=2 -->
 
 ## UI Composition
 
-Build interfaces from the design system's components, configured through their public API, and from the project's existing patterns. The design system's own guidance governs selection, layout, and the styling boundary (Kerf: see `kerf-ui-usage`); this rule governs the process around it.
+Build interfaces from the design system's components, configured through their public API, and from the project's existing patterns. The design system's own guidance governs selection, layout, the styling boundary, and the interaction defaults (Kerf: see `kerf-ui-usage` and `kerf-ui-interaction-defaults`); this rule governs the process around it.
 
 - **Look it up before you build it.** Before writing any UI, read the library guidance in its retrieval order, the project's component catalog and demo route, and the named reference project's same surface. Copy a working reference implementation rather than approximating it, and cite the paths you read in the preliminary note.
 - **Name the owner of every region.** For a screen or redesign, the preliminary note lists each region and the public component that owns it: shell and rails, toolbars, search, tabs, columns, popups, banners, empty states, dialogs, the demo route. A handwritten `nav`, `button`, or `input` with CSS for border, selected, hover, or disabled state, position, or z-index is a defect unless the catalog has no component; then file the gap upstream and say so in the ticket. Raw `div`, `p`, or `span` where the library has a primitive is the same defect.

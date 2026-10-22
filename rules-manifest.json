@@ -111,8 +111,8 @@
     {
       "name": "ui-composition",
       "path": "rules/ui-composition.md",
-      "version": 1,
-      "sha256": "1ec42bdf950125f3070209adfe06e30c6b4fa41cb04a74f6a711bb519ce74a9d",
+      "version": 2,
+      "sha256": "20f356d0790f6c5e63b28fdb7f4efc196ef77c58cefa8110375194755e6e6ea3",
       "tags": [
         "ui",
         "design-system"
@@ -187,8 +187,8 @@
     {
       "name": "kerf-ui-usage",
       "path": "rules/kerf-ui-usage.md",
-      "version": 1,
-      "sha256": "d841ea7819d4e914fa6a3a210b4875f0d49a7fb23cac08db32a80dbdf66c7f7c",
+      "version": 2,
+      "sha256": "03e28e0c03d4a0a6fae07144c9b40ecc79c934e80406b8216b715e5c4692c297",
       "owner": "kerf-ui",
       "tags": [
         "kerf-ui",

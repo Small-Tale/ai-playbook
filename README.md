@@ -14,14 +14,14 @@ does not require Rulesync, a network connection, or this checkout.
 | `project-bootstrap` | 1 | Day-one gate, skeleton, docs set, and reference parity |
 | `conventions-as-code` | 2 | Policy tests (source, CSS, instruction files) and lint/doctor suppression governance |
 | `test-operations` | 1 | Isolation, build-once, flake and quarantine policy, quiet output |
-| `ui-composition` | 1 | Design-system-first construction process |
+| `ui-composition` | 2 | Design-system-first construction process |
 | `ui-evaluation` | 1 | Judging a rendered UI and what passing tools do not prove |
 | `customer-data-hygiene` | 1 | No customer content in tickets, logs, fixtures, or telemetry |
 | `web-client-organization` | 1 | Directory roles, component granularity, CSS ownership, size limits |
 | `typescript-lint-and-format` | 1 | Prettier, strict type-aware ESLint, tsconfig defaults |
 | `rust-lint-and-format` | 1 | Clippy, rustfmt, toolchain pin, test isolation |
 | `playwright-operations` | 1 | Per-worker isolation, readiness waits, real geometry, flake criteria |
-| `kerf-ui-usage` | 1 | Kerf guidance retrieval order, gates, Web Awesome policy, component gaps |
+| `kerf-ui-usage` | 2 | Kerf guidance retrieval order, gates, Web Awesome policy, component gaps |
 | `kerf-ui-upgrades` | 1 | Lockstep Kerf package upgrades |
 | `kerf-ui-catalog-demos` | 1 | Catalog demos are the production components, exercised for real |
 | `kerf-ui-interaction-defaults` | 1 | Pointer to Kerf's consumer house grammar; deviations only on record |
