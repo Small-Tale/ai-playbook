@@ -1,7 +1,8 @@
 # Codebase map
 
 - `rules/`: five independent Rulesync root rules, each with existing Hot Sheet markers.
-- `rules-manifest.json`: rule names, versions, body hashes, and original HS2 paths/ref.
+- `rules-manifest.json`: rule names, versions, body hashes, optional `owner` (enforced name
+  prefix) and `tags`, and original HS2 `baseline_paths`/ref for migrated rules only.
 - `scripts/check_rules.py`: standard-library rule and bootstrap validation, plus optional
   bundle comparison.
 - `tests/test_rules.py`: valid, changed, unlisted, version, downstream drift, and

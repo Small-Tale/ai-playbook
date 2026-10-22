@@ -21,6 +21,16 @@ of contributor instructions for every AI tool: `CLAUDE.md` contains only the Cla
 Code import `@AGENTS.md`, and validation rejects any other content, so edit
 `AGENTS.md` instead.
 
+Rule names follow one convention. A rule owned by, or most closely associated with, one
+tool or technology carries that owner as its prefix (`hotsheet-*`, `kerf-ui-*`,
+`typescript-*`, `playwright-*`); a general rule has no prefix. The manifest's optional
+`owner` field names that prefix and validation enforces it; the optional `tags` field
+lists the languages and technologies a rule applies to, so a picker can filter by stack.
+Rules migrated from Hot Sheet 2 keep their original section names and record
+`baseline_paths` for the byte-for-byte comparison; rules that originate here use their
+full name as the section name, start at section version 1, and have no baseline, so the
+comparison skips them.
+
 Hot Sheet 2 setup and refresh leave a plain `@AGENTS.md` line untouched from commit
 `86b82e29` (HS2-HP1S4H) onward and keep the shared guidance in `AGENTS.md`. Older
 builds, including a running server's automatic refresh, append a `hotsheet:claude`

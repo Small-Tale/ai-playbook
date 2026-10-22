@@ -8,6 +8,8 @@
       "path": "rules/hotsheet-ticket-driven-work.md",
       "version": 5,
       "sha256": "9f0e1f2e77d2bfaaa259b099c065a115b4368e57e6a2a27821eb99e8f8c3194b",
+      "owner": "hotsheet",
+      "tags": ["hotsheet", "process"],
       "baseline_paths": [
         "plugins/shared/ticket-driven-work.md"
       ]
@@ -17,6 +19,8 @@
       "path": "rules/hotsheet-testing-philosophy.md",
       "version": 5,
       "sha256": "b3a4ff6eb51a03f9ce7c99917ea7d270b3978747393964969c96cc50ddd92014",
+      "owner": "hotsheet",
+      "tags": ["hotsheet", "testing"],
       "baseline_paths": [
         "plugins/shared/testing-philosophy.md"
       ]
@@ -26,6 +30,8 @@
       "path": "rules/hotsheet-requirements-documentation.md",
       "version": 3,
       "sha256": "298c143a24b54aae73e7d77a0e3439574cedf50f5d126524cac565e90ed4bdc0",
+      "owner": "hotsheet",
+      "tags": ["hotsheet", "documentation"],
       "baseline_paths": [
         "plugins/shared/requirements-documentation.md"
       ]
@@ -35,6 +41,8 @@
       "path": "rules/hotsheet-visual-qa.md",
       "version": 1,
       "sha256": "4ba873dcb396b6ef07232a3cb23a10d7d85a6cd0c25c7e9a0a534a745e646762",
+      "owner": "hotsheet",
+      "tags": ["hotsheet", "ui", "testing"],
       "baseline_paths": [
         "plugins/shared/visual-qa.md"
       ]
@@ -44,6 +52,8 @@
       "path": "rules/hotsheet-workflow.md",
       "version": 64,
       "sha256": "3867d18cc926d08932cb42d256824bd1a4d1ee1afa0f6fc251ae8f5457635815",
+      "owner": "hotsheet",
+      "tags": ["hotsheet", "process"],
       "baseline_paths": [
         "plugins/claude/instructions.md",
         "plugins/codex/instructions.md",
