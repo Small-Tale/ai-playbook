@@ -1,7 +1,7 @@
 # Codebase map
 
-- `rules/`: twenty-two independent Rulesync root rules (five migrated from Hot Sheet 2,
-  seventeen playbook-originated), each wrapped in a Hot Sheet section marker.
+- `rules/`: twenty-three independent Rulesync root rules (five migrated from Hot Sheet 2,
+  eighteen playbook-originated), each wrapped in a Hot Sheet section marker.
 - `rules-manifest.json`: rule names, versions, body hashes, optional `owner` (enforced name
   prefix) and `tags`, and original HS2 `baseline_paths`/ref for migrated rules only.
 - `scripts/check_rules.py`: standard-library rule and bootstrap validation, plus optional

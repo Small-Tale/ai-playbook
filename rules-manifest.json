@@ -265,6 +265,18 @@
         "deployment",
         "infrastructure"
       ]
+    },
+    {
+      "name": "kerf-ui-interaction-defaults",
+      "path": "rules/kerf-ui-interaction-defaults.md",
+      "version": 1,
+      "sha256": "2af826fa2751e90d7cdf91d95565dd0d2ef441fe96d3543210a900afc71e690c",
+      "owner": "kerf-ui",
+      "tags": [
+        "kerf-ui",
+        "ui",
+        "web"
+      ]
     }
   ]
 }

@@ -24,15 +24,17 @@ does not require Rulesync, a network connection, or this checkout.
 | `kerf-ui-usage` | 1 | Kerf guidance retrieval order, gates, Web Awesome policy, component gaps |
 | `kerf-ui-upgrades` | 1 | Lockstep Kerf package upgrades |
 | `kerf-ui-catalog-demos` | 1 | Catalog demos are the production components, exercised for real |
+| `kerf-ui-interaction-defaults` | 1 | Pointer to Kerf's consumer house grammar; deviations only on record |
 | `git-commit-and-push` | 1 | Commit shape, staging by path, history safety, declared push policy |
 | `release-scripts` | 1 | One resumable release command that tags; CI publishes from the tag |
 | `gitgist-release-notes` | 1 | gitgist for release notes and commit drafts, configured once |
 | `deployment-scripts` | 1 | Phased, re-runnable deploy script with SHA-tagged artifacts |
 
-Planned: `kerf-ui-interaction-defaults`, a pointer to the Kerf UI house-grammar document, lands
-when that document ships (`KF-Q4FMX5` in the Kerf store). Rules are opinionated by design;
-a project that adopts one deviates only at the project level for a compelling or necessary
-reason, recorded in its own conventions document.
+Rules are opinionated by design; a project that adopts one deviates only at the project
+level for a compelling or necessary reason, recorded in its own conventions document.
+`kerf-ui-interaction-defaults` points at Kerf's own consumer house grammar
+(`node_modules/@kerfjs/ui/docs/interaction-conventions.md`, from `@kerfjs/ui@5.0.0-beta.118`)
+rather than restating it; Kerf owns that document and its design philosophy.
 
 `git-commit-and-push` requires each adopting project to declare one of two named push
 policies (`push-per-ticket` or `push-per-batch`) in its instructions. The Hot Sheet
