@@ -12,7 +12,7 @@ does not require Rulesync, a network connection, or this checkout.
 | `hotsheet-visual-qa` | 2 | Real rendered inspection and evidence |
 | `hotsheet-workflow` | 64 | Hot Sheet CLI/MCP workflow, claims, phases, and confidence |
 | `project-bootstrap` | 1 | Day-one gate, skeleton, docs set, and reference parity |
-| `conventions-as-code` | 1 | Policy tests and lint/doctor suppression governance |
+| `conventions-as-code` | 2 | Policy tests (source, CSS, instruction files) and lint/doctor suppression governance |
 | `test-operations` | 1 | Isolation, build-once, flake and quarantine policy, quiet output |
 | `ui-composition` | 1 | Design-system-first construction process |
 | `ui-evaluation` | 1 | Judging a rendered UI and what passing tools do not prove |

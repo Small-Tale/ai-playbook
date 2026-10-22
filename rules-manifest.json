@@ -90,8 +90,8 @@
     {
       "name": "conventions-as-code",
       "path": "rules/conventions-as-code.md",
-      "version": 1,
-      "sha256": "4523afd25624e014d18c5c0b9a39900b2178e8ca7a6e9e8dbabc5af11b5b51a8",
+      "version": 2,
+      "sha256": "8f3aea58ae41b4e9fca7d3d209538751d1b093c5aec6e2d5117f7a96aa3ccb60",
       "tags": [
         "general",
         "testing",
