@@ -6,10 +6,13 @@
     {
       "name": "hotsheet-ticket-driven-work",
       "path": "rules/hotsheet-ticket-driven-work.md",
-      "version": 5,
-      "sha256": "9f0e1f2e77d2bfaaa259b099c065a115b4368e57e6a2a27821eb99e8f8c3194b",
+      "version": 6,
+      "sha256": "603b3f5622d10a6f73ae36114ecfd46948a977e0619c418d133e93085bde11bc",
       "owner": "hotsheet",
-      "tags": ["hotsheet", "process"],
+      "tags": [
+        "hotsheet",
+        "process"
+      ],
       "baseline_paths": [
         "plugins/shared/ticket-driven-work.md"
       ]
@@ -17,10 +20,13 @@
     {
       "name": "hotsheet-testing-philosophy",
       "path": "rules/hotsheet-testing-philosophy.md",
-      "version": 5,
-      "sha256": "b3a4ff6eb51a03f9ce7c99917ea7d270b3978747393964969c96cc50ddd92014",
+      "version": 6,
+      "sha256": "c8058266c2a7412c6b3039fd8b107903911f99e06b25af8a41bc2f277c16ef17",
       "owner": "hotsheet",
-      "tags": ["hotsheet", "testing"],
+      "tags": [
+        "hotsheet",
+        "testing"
+      ],
       "baseline_paths": [
         "plugins/shared/testing-philosophy.md"
       ]
@@ -28,10 +34,13 @@
     {
       "name": "hotsheet-requirements-documentation",
       "path": "rules/hotsheet-requirements-documentation.md",
-      "version": 3,
-      "sha256": "298c143a24b54aae73e7d77a0e3439574cedf50f5d126524cac565e90ed4bdc0",
+      "version": 4,
+      "sha256": "8c23cfcd093e51e194e73ef2a6e2c808b55a60766ab08e4946e84d6867120daf",
       "owner": "hotsheet",
-      "tags": ["hotsheet", "documentation"],
+      "tags": [
+        "hotsheet",
+        "documentation"
+      ],
       "baseline_paths": [
         "plugins/shared/requirements-documentation.md"
       ]
@@ -39,10 +48,14 @@
     {
       "name": "hotsheet-visual-qa",
       "path": "rules/hotsheet-visual-qa.md",
-      "version": 1,
-      "sha256": "4ba873dcb396b6ef07232a3cb23a10d7d85a6cd0c25c7e9a0a534a745e646762",
+      "version": 2,
+      "sha256": "cd6422466ecbe6b99bcca1aa1c86a11797d7411e97632c323ed39041075ec9d6",
       "owner": "hotsheet",
-      "tags": ["hotsheet", "ui", "testing"],
+      "tags": [
+        "hotsheet",
+        "ui",
+        "testing"
+      ],
       "baseline_paths": [
         "plugins/shared/visual-qa.md"
       ]
@@ -53,12 +66,159 @@
       "version": 64,
       "sha256": "3867d18cc926d08932cb42d256824bd1a4d1ee1afa0f6fc251ae8f5457635815",
       "owner": "hotsheet",
-      "tags": ["hotsheet", "process"],
+      "tags": [
+        "hotsheet",
+        "process"
+      ],
       "baseline_paths": [
         "plugins/claude/instructions.md",
         "plugins/codex/instructions.md",
         "plugins/antigravity/instructions.md",
         "plugins/opencode/instructions.md"
+      ]
+    },
+    {
+      "name": "project-bootstrap",
+      "path": "rules/project-bootstrap.md",
+      "version": 1,
+      "sha256": "e592509a28809d4c2b69e7ff36e84b91ce2b978efae793658e10ebce8c3ae5f8",
+      "tags": [
+        "general",
+        "process"
+      ]
+    },
+    {
+      "name": "conventions-as-code",
+      "path": "rules/conventions-as-code.md",
+      "version": 1,
+      "sha256": "4523afd25624e014d18c5c0b9a39900b2178e8ca7a6e9e8dbabc5af11b5b51a8",
+      "tags": [
+        "general",
+        "testing",
+        "lint"
+      ]
+    },
+    {
+      "name": "test-operations",
+      "path": "rules/test-operations.md",
+      "version": 1,
+      "sha256": "008463c07ab2498fe18f63aa317b9c76324dc1770e03086d025317a61c454420",
+      "tags": [
+        "general",
+        "testing"
+      ]
+    },
+    {
+      "name": "ui-composition",
+      "path": "rules/ui-composition.md",
+      "version": 1,
+      "sha256": "1ec42bdf950125f3070209adfe06e30c6b4fa41cb04a74f6a711bb519ce74a9d",
+      "tags": [
+        "ui",
+        "design-system"
+      ]
+    },
+    {
+      "name": "ui-evaluation",
+      "path": "rules/ui-evaluation.md",
+      "version": 1,
+      "sha256": "f19b026904b3d8fc7e214b7d0b0ffe1b1f8947f138c2c3440d2043cd8c5eb5f4",
+      "tags": [
+        "ui",
+        "testing"
+      ]
+    },
+    {
+      "name": "customer-data-hygiene",
+      "path": "rules/customer-data-hygiene.md",
+      "version": 1,
+      "sha256": "82db5b5bbf62600b06357e8b5738aa014ad8cfbaee81b0a89e94ce2c53b44205",
+      "tags": [
+        "general",
+        "privacy"
+      ]
+    },
+    {
+      "name": "web-client-organization",
+      "path": "rules/web-client-organization.md",
+      "version": 1,
+      "sha256": "af3eb8cc199756326794de719401e0cd02ecfbb1d24abedc61fc4831833560b2",
+      "owner": "web-client",
+      "tags": [
+        "web",
+        "typescript",
+        "organization"
+      ]
+    },
+    {
+      "name": "typescript-lint-and-format",
+      "path": "rules/typescript-lint-and-format.md",
+      "version": 1,
+      "sha256": "679d35497f3d2cf4b05e46b8b5675cebf9709d7930a3381c044dc3c40148bbf9",
+      "owner": "typescript",
+      "tags": [
+        "typescript",
+        "lint"
+      ]
+    },
+    {
+      "name": "rust-lint-and-format",
+      "path": "rules/rust-lint-and-format.md",
+      "version": 1,
+      "sha256": "294f802f983361ec5e426039a3548d2524257906f4d1e6674806fb2246ca25b2",
+      "owner": "rust",
+      "tags": [
+        "rust",
+        "lint"
+      ]
+    },
+    {
+      "name": "playwright-operations",
+      "path": "rules/playwright-operations.md",
+      "version": 1,
+      "sha256": "b6e43b7b2eadb6ca04c87436dfac387eccf00ec7dc54c3f76a45b53b1e0a026a",
+      "owner": "playwright",
+      "tags": [
+        "playwright",
+        "testing",
+        "web"
+      ]
+    },
+    {
+      "name": "kerf-ui-usage",
+      "path": "rules/kerf-ui-usage.md",
+      "version": 1,
+      "sha256": "d841ea7819d4e914fa6a3a210b4875f0d49a7fb23cac08db32a80dbdf66c7f7c",
+      "owner": "kerf-ui",
+      "tags": [
+        "kerf-ui",
+        "web",
+        "typescript"
+      ]
+    },
+    {
+      "name": "kerf-ui-upgrades",
+      "path": "rules/kerf-ui-upgrades.md",
+      "version": 1,
+      "sha256": "18cc6503144295519f284954c15798b0598c99f17f7c407059608974701782d8",
+      "owner": "kerf-ui",
+      "tags": [
+        "kerf-ui",
+        "web",
+        "typescript"
+      ]
+    },
+    {
+      "name": "kerf-ui-catalog-demos",
+      "path": "rules/kerf-ui-catalog-demos.md",
+      "version": 1,
+      "sha256": "ce21e4ba010d600425a127ec1bbb9a8c64e03fa3886eb0d8e5926e954d4ad57e",
+      "owner": "kerf-ui",
+      "tags": [
+        "kerf-ui",
+        "web",
+        "typescript",
+        "testing"
       ]
     }
   ]

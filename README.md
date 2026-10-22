@@ -6,11 +6,29 @@ does not require Rulesync, a network connection, or this checkout.
 
 | Selectable name | Section version | Purpose |
 | --- | --- | --- |
-| `hotsheet-ticket-driven-work` | 5 | Ticket lifecycle, follow-ups, evidence, and note hygiene |
-| `hotsheet-testing-philosophy` | 5 | Risk tiers, behavioral coverage, and verification |
-| `hotsheet-requirements-documentation` | 3 | Human requirements and concise AI summaries |
-| `hotsheet-visual-qa` | 1 | Real rendered inspection and evidence |
+| `hotsheet-ticket-driven-work` | 6 | Ticket lifecycle, follow-ups, scope fidelity, evidence, and note hygiene |
+| `hotsheet-testing-philosophy` | 6 | Risk tiers, behavioral coverage, policy tests, and verification |
+| `hotsheet-requirements-documentation` | 4 | Human requirements, concise AI summaries, and the UI conventions doc |
+| `hotsheet-visual-qa` | 2 | Real rendered inspection and evidence |
 | `hotsheet-workflow` | 64 | Hot Sheet CLI/MCP workflow, claims, phases, and confidence |
+| `project-bootstrap` | 1 | Day-one gate, skeleton, docs set, and reference parity |
+| `conventions-as-code` | 1 | Policy tests and lint/doctor suppression governance |
+| `test-operations` | 1 | Isolation, build-once, flake and quarantine policy, quiet output |
+| `ui-composition` | 1 | Design-system-first construction process |
+| `ui-evaluation` | 1 | Judging a rendered UI and what passing tools do not prove |
+| `customer-data-hygiene` | 1 | No customer content in tickets, logs, fixtures, or telemetry |
+| `web-client-organization` | 1 | Directory roles, component granularity, CSS ownership, size limits |
+| `typescript-lint-and-format` | 1 | Prettier, strict type-aware ESLint, tsconfig defaults |
+| `rust-lint-and-format` | 1 | Clippy, rustfmt, toolchain pin, test isolation |
+| `playwright-operations` | 1 | Per-worker isolation, readiness waits, real geometry, flake criteria |
+| `kerf-ui-usage` | 1 | Kerf guidance retrieval order, gates, Web Awesome policy, component gaps |
+| `kerf-ui-upgrades` | 1 | Lockstep Kerf package upgrades |
+| `kerf-ui-catalog-demos` | 1 | Catalog demos are the production components, exercised for real |
+
+Planned: `kerf-ui-interaction-defaults`, a pointer to the Kerf UI house-grammar document, lands
+when that document ships (`KF-Q4FMX5` in the Kerf store). Rules are opinionated by design;
+a project that adopts one deviates only at the project level for a compelling or necessary
+reason, recorded in its own conventions document.
 
 The maintained sources are the direct Markdown children of `rules/`. Rulesync
 frontmatter is packaging; the body retains Hot Sheet's managed markers and version.

@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('check_rules', ROOT / 'scripts/check_rules.py')
 checker = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(checker)
+PUBLISHED = len(json.loads((ROOT / 'rules-manifest.json').read_text())['rules'])
 
 
 class RulesTests(unittest.TestCase):
@@ -43,7 +44,7 @@ class RulesTests(unittest.TestCase):
         return bundle
 
     def test_published_rules_are_valid(self):
-        self.assertEqual(checker.validate(self.root), 5)
+        self.assertEqual(checker.validate(self.root), PUBLISHED)
 
     def test_unreviewed_body_change_is_rejected(self):
         path = self.root / 'rules/hotsheet-visual-qa.md'
@@ -66,18 +67,18 @@ class RulesTests(unittest.TestCase):
 
     def test_baseline_comparison_checks_each_destination(self):
         bundle = self.write_bundle()
-        self.assertEqual(checker.validate(self.root, bundle), 5)
+        self.assertEqual(checker.validate(self.root, bundle), PUBLISHED)
         (bundle / 'plugins/codex/instructions.md').write_text('drift')
         with self.assertRaisesRegex(ValueError, 'baseline differs'):
             checker.validate(self.root, bundle)
 
     def test_playbook_rule_without_prefix_is_accepted(self):
-        self.add_rule('project-bootstrap', tags=['general'])
-        self.assertEqual(checker.validate(self.root), 6)
+        self.add_rule('sample-general-rule', tags=['general'])
+        self.assertEqual(checker.validate(self.root), PUBLISHED + 1)
 
     def test_owner_prefixed_rule_is_accepted(self):
-        self.add_rule('kerf-ui-usage', owner='kerf-ui', tags=['kerf-ui', 'typescript'])
-        self.assertEqual(checker.validate(self.root), 6)
+        self.add_rule('kerf-ui-sample', owner='kerf-ui', tags=['kerf-ui', 'typescript'])
+        self.assertEqual(checker.validate(self.root), PUBLISHED + 1)
 
     def test_owner_prefix_mismatch_is_rejected(self):
         self.add_rule('ui-usage', owner='kerf-ui')
@@ -85,7 +86,7 @@ class RulesTests(unittest.TestCase):
             checker.validate(self.root)
 
     def test_malformed_names_are_rejected(self):
-        for name in ('Kerf-UI-usage', 'typescript-', '-general', 'a--b', 'rust_lint'):
+        for name in ('Sample-Rule', 'typescript-', '-general', 'a--b', 'rust_lint'):
             with self.subTest(name=name):
                 shutil.copy(ROOT / 'rules-manifest.json', self.root)
                 self.add_rule(name)
@@ -93,13 +94,13 @@ class RulesTests(unittest.TestCase):
                     checker.validate(self.root)
 
     def test_invalid_tag_is_rejected(self):
-        self.add_rule('customer-data-hygiene', tags=['Customer Data'])
+        self.add_rule('sample-tagged-rule', tags=['Customer Data'])
         with self.assertRaisesRegex(ValueError, 'invalid tag'):
             checker.validate(self.root)
 
     def test_baseline_comparison_skips_playbook_rules(self):
-        self.add_rule('test-operations')
-        self.assertEqual(checker.validate(self.root, self.write_bundle()), 6)
+        self.add_rule('sample-no-baseline')
+        self.assertEqual(checker.validate(self.root, self.write_bundle()), PUBLISHED + 1)
 
     def test_section_markers_follow_rule_origin(self):
         self.assertEqual(checker.section_marker('hotsheet-visual-qa', 1),
