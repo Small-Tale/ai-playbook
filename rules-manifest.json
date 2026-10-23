@@ -111,8 +111,8 @@
     {
       "name": "ui-composition",
       "path": "rules/ui-composition.md",
-      "version": 2,
-      "sha256": "20f356d0790f6c5e63b28fdb7f4efc196ef77c58cefa8110375194755e6e6ea3",
+      "version": 3,
+      "sha256": "ec9abc187b5080d233223c3a828086381d4805cf8f0f2087e8aff07d5ae812f2",
       "tags": [
         "ui",
         "design-system"

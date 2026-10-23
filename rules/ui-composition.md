@@ -4,7 +4,7 @@ targets: ["*"]
 description: "Design-system-first UI construction: look it up, name the owner, earn every control"
 ---
 
-<!-- hotsheet:begin section=ui-composition v=2 -->
+<!-- hotsheet:begin section=ui-composition v=3 -->
 
 ## UI Composition
 
@@ -15,7 +15,7 @@ Build interfaces from the design system's components, configured through their p
 - **Configure, never override.** A missing prop, variant, or token is an upstream ticket referenced from the app ticket, which stays blocked rather than shipping an override. This holds even when the maintainer asks for the visual directly: name the conflict and the missing API, and file the gap.
 - **Earn every control.** Every control, container, and line of copy traces to a human requirement or a reference precedent. Do not add explanatory paragraphs, permanent caveats, counts, "view options" menus, custom back and forward, theme toggles, duplicate titles, nested boxes, or editable fields for values the interaction already knows; use browser history and `prefers-color-scheme`. When a human says remove, remove; do not relocate.
 - **Human words are the spec.** Carry the human's exact component, placement, state, and viewport nouns into derived tickets and test names. AI notes, preliminary thoughts, and rewritten requirements never supersede them; when a phrase admits two behaviors, ask with a `CHOICE` note before building.
-- **Sign off before fanning out.** For a new screen or redesign, especially from a title-only ticket, post the region plan or wide and narrow captures and wait for feedback before building further; never fan dozens of tickets off an unreviewed layout.
+- **Sign off before fanning out.** For a new screen or redesign, especially from a title-only ticket, post the region plan or wide and narrow captures and wait for feedback before building further; never fan dozens of tickets off an unreviewed layout. A bounded redesign of one screen whose ticket states the intent may proceed once the region plan is posted in the preliminary note; the wait applies before deriving further tickets or screens from an unreviewed layout.
 - **Reuse semantics.** The same feature uses the same component everywhere, in a read-only variant when needed, never a copy; new lists inherit the app's selection, context-menu, edit, and autosave grammar; one concept per indicator and one name per concept.
 
 <!-- hotsheet:end section=ui-composition -->

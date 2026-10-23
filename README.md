@@ -14,7 +14,7 @@ does not require Rulesync, a network connection, or this checkout.
 | `project-bootstrap` | 1 | Day-one gate, skeleton, docs set, and reference parity |
 | `conventions-as-code` | 2 | Policy tests (source, CSS, instruction files) and lint/doctor suppression governance |
 | `test-operations` | 1 | Isolation, build-once, flake and quarantine policy, quiet output |
-| `ui-composition` | 2 | Design-system-first construction process |
+| `ui-composition` | 3 | Design-system-first construction process |
 | `ui-evaluation` | 1 | Judging a rendered UI and what passing tools do not prove |
 | `customer-data-hygiene` | 1 | No customer content in tickets, logs, fixtures, or telemetry |
 | `web-client-organization` | 1 | Directory roles, component granularity, CSS ownership, size limits |
