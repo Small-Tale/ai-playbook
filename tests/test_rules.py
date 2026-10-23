@@ -127,6 +127,15 @@ class RulesTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'missing AGENTS.md'):
             checker.validate_bootstrap(self.root)
 
+    def test_machine_local_hotsheet_files_are_ignored(self):
+        """HS2-W3RAMK: .gitignore, not a clone's .git/info/exclude, hides setup output."""
+        patterns = [line.strip() for line in (ROOT / '.gitignore').read_text().splitlines()
+                    if line.strip() and not line.startswith('#')]
+        for pattern in ('/.hotsheet2/*', '!/.hotsheet2/settings.json', '/.hotsheet/',
+                        '/.mcp.json', '/.claude/settings.local.json', '/.codex/config.toml',
+                        '/.codex/hooks.json', '/.agents/mcp_config.json', '/opencode.json'):
+            self.assertIn(pattern, patterns)
+
 
 if __name__ == '__main__':
     unittest.main()
