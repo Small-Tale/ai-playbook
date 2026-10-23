@@ -93,6 +93,7 @@ a published body and leaving a locally edited one alone. Rulesync is not involve
 | `check-requirements-against-code` | 1 | Requirements versus every surface; synchronize the codebase map, requirements summary, and coverage record in place |
 | `technical-changelog` | 1 | Diff-grounded one-page release changelog with measured numbers; every claim verified against the base tree |
 | `ui-ux-review` | 1 | Principal-Designer review of one screen or flow against the project's design intent, with captures, a second opinion, and tickets |
+| `security-review` | 1 | Attack surface re-derived from code, per-surface checks, advisory research, dated report, remediation tickets |
 
 Skills take the project's own `AGENTS.md`, manifests, CI workflows, and synthesis documents
 as the authority for surfaces, commands, and thresholds; they carry recipes and report

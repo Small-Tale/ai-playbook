@@ -53,6 +53,16 @@
         "general",
         "ui"
       ]
+    },
+    {
+      "name": "security-review",
+      "path": "skills/security-review/SKILL.md",
+      "version": 1,
+      "sha256": "10e0f8752ae45b0425e42e7fc792184051a758db63a056b5da669ce9a30fcea2",
+      "tags": [
+        "general",
+        "security"
+      ]
     }
   ]
 }
