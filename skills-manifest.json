@@ -43,6 +43,16 @@
         "release",
         "documentation"
       ]
+    },
+    {
+      "name": "ui-ux-review",
+      "path": "skills/ui-ux-review/SKILL.md",
+      "version": 1,
+      "sha256": "a6e422c0a1c79377a531a865e51d67e9326b3fe8534450a61ca9fe44bd603d14",
+      "tags": [
+        "general",
+        "ui"
+      ]
     }
   ]
 }
