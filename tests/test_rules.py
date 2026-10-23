@@ -136,6 +136,10 @@ class RulesTests(unittest.TestCase):
                         '/.codex/hooks.json', '/.agents/mcp_config.json', '/opencode.json'):
             self.assertIn(pattern, patterns)
 
+    def test_python_bytecode_caches_are_ignored(self):
+        """HS2-9NE1WE: the unit-test gate must leave the clone clean."""
+        self.assertIn('__pycache__/', (ROOT / '.gitignore').read_text().splitlines())
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -15,3 +15,6 @@
 /.codex/hooks.json
 /.agents/mcp_config.json
 /opencode.json
+
+# Python bytecode written by the unit-test gate (HS2-9NE1WE).
+__pycache__/
