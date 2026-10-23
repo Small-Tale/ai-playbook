@@ -11,6 +11,9 @@
 - `AGENTS.md`, `.agents/skills/`, `.claude/skills/`: preserved contributor bootstrap;
   `AGENTS.md` is the one instruction source for all AI tools.
 - `CLAUDE.md`: only `@AGENTS.md` (Claude Code import), enforced by `check_rules.py`.
+- `.hotsheet2/settings.json`: the declared push policy (`push-per-ticket`), which Hot Sheet
+  setup and refresh render into the push-policy block of `AGENTS.md` and the skill files;
+  the store, local settings, and generated tool configs are machine-local and untracked.
 - `ruff.toml`: lint rules for `scripts/` and `tests/`; `.github/workflows/check.yml` runs
   the pinned `ruff check .`, the validator, and the unit tests.
 - `README.md`: ownership, release policy, consumption, and verification commands.

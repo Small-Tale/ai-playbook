@@ -39,6 +39,8 @@ rather than restating it; Kerf owns that document and its design philosophy.
 `git-commit-and-push` requires each adopting project to declare one of two named push
 policies (`push-per-ticket` or `push-per-batch`) in its instructions. The Hot Sheet
 workflow's own "pushing is up to this repository" sentence defers to that declaration.
+This repository declares `push-per-ticket` in `.hotsheet2/settings.json`; Hot Sheet setup
+and refresh render it into the push-policy block of `AGENTS.md` and the skill files.
 
 The maintained sources are the direct Markdown children of `rules/`. Rulesync
 frontmatter is packaging; the body retains Hot Sheet's managed markers and version.
