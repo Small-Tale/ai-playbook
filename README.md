@@ -95,6 +95,7 @@ a published body and leaving a locally edited one alone. Rulesync is not involve
 | `ui-ux-review` | 1 | Principal-Designer review of one screen or flow against the project's design intent, with captures, a second opinion, and tickets |
 | `security-review` | 1 | Attack surface re-derived from code, per-surface checks, advisory research, dated report, remediation tickets |
 | `feature-health` | 1 | Does-it-actually-work snapshot per feature from coverage, history, backlog, and real use; rewrites the health document |
+| `prep-major-release` | 1 | Before a major: READMEs against manifests and exports, cross-package contracts, demo-capture retake list |
 
 Skills take the project's own `AGENTS.md`, manifests, CI workflows, and synthesis documents
 as the authority for surfaces, commands, and thresholds; they carry recipes and report

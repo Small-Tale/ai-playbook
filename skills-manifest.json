@@ -74,6 +74,17 @@
         "documentation",
         "testing"
       ]
+    },
+    {
+      "name": "prep-major-release",
+      "path": "skills/prep-major-release/SKILL.md",
+      "version": 1,
+      "sha256": "f45cd8965f384b71a47775e7119d907b481d1227ca49fff561b3ab486a60f527",
+      "tags": [
+        "general",
+        "release",
+        "documentation"
+      ]
     }
   ]
 }
