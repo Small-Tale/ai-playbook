@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "skills": [
+    {
+      "name": "analyze-code-quality",
+      "path": "skills/analyze-code-quality/SKILL.md",
+      "version": 1,
+      "sha256": "af77e5d89b69e4861f677018e8d7f847eb4babf3c9a5ba17ae7b59c33c31d436",
+      "tags": [
+        "general",
+        "quality",
+        "testing"
+      ]
+    },
+    {
+      "name": "check-code-hygiene",
+      "path": "skills/check-code-hygiene/SKILL.md",
+      "version": 1,
+      "sha256": "65586402fa7443a29edf08c4de7f81412e052ba6bcf9637fde247519d7b038c8",
+      "tags": [
+        "general",
+        "quality"
+      ]
+    },
+    {
+      "name": "check-requirements-against-code",
+      "path": "skills/check-requirements-against-code/SKILL.md",
+      "version": 1,
+      "sha256": "3f58bd44c89d9539aca7483f863eab692c0d460b3add4c6c67551e0cf266202b",
+      "tags": [
+        "general",
+        "quality",
+        "documentation"
+      ]
+    }
+  ]
+}

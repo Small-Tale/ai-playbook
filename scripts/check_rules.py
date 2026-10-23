@@ -1,4 +1,4 @@
-"""Validate selectable guidance and optionally compare a Hot Sheet bundle."""
+"""Validate selectable guidance (rules and skills) and optionally compare a Hot Sheet bundle."""
 import argparse
 import hashlib
 import json
@@ -6,6 +6,8 @@ from pathlib import Path
 import re
 
 SLUG = re.compile(r'[a-z][a-z0-9]*(-[a-z0-9]+)*')
+SKILL_FRONTMATTER = re.compile(
+    r'\A---\nname: ([^\n]+)\ndescription: [^\n]+\n(?:allowed-tools: [^\n]+\n)?---\n\n')
 
 
 def rule_body(text):
@@ -27,19 +29,33 @@ def section_marker(name, version):
     return f'<!-- hotsheet:begin section={name.removeprefix("hotsheet-")} v={version} -->'
 
 
-def validate_entry(rule):
-    """Check a manifest entry's name, path, owner prefix, and tags."""
-    name = rule['name']
+def skill_marker(name, version):
+    """Return the version marker that opens a skill body.
+
+    Skills are copied verbatim into each tool's skill directory, so the marker is informational:
+    it lets a reader of an installed copy see which published version it came from.
+    """
+    return f'<!-- ai-playbook:skill name={name} v={version} -->'
+
+
+def validate_naming(kind, record):
+    """Check a manifest record's name, owner prefix, and tags; shared by rules and skills."""
+    name = record['name']
     if not SLUG.fullmatch(name):
-        raise ValueError(f'invalid rule name: {name}')
-    if rule['path'] != f'rules/{name}.md':
-        raise ValueError(f'invalid rule path: {rule["path"]}')
-    owner = rule.get('owner')
+        raise ValueError(f'invalid {kind} name: {name}')
+    owner = record.get('owner')
     if owner is not None and (not SLUG.fullmatch(owner) or not name.startswith(f'{owner}-')):
-        raise ValueError(f'rule name must start with its owner prefix: {name}')
-    for tag in rule.get('tags', []):
+        raise ValueError(f'{kind} name must start with its owner prefix: {name}')
+    for tag in record.get('tags', []):
         if not SLUG.fullmatch(tag):
             raise ValueError(f'invalid tag {tag!r}: {name}')
+
+
+def validate_entry(rule):
+    """Check a manifest entry's name, path, owner prefix, and tags."""
+    validate_naming('rule', rule)
+    if rule['path'] != f'rules/{rule["name"]}.md':
+        raise ValueError(f'invalid rule path: {rule["path"]}')
 
 
 def validate(root, hotsheet=None):
@@ -68,6 +84,52 @@ def validate(root, hotsheet=None):
     return len(expected)
 
 
+def validate_skill(root, skill):
+    """Check one skill: Hot Sheet 2's import layout, frontmatter, version marker, and every file's hash."""
+    name = skill['name']
+    validate_naming('skill', skill)
+    if skill['path'] != f'skills/{name}/SKILL.md':
+        raise ValueError(f'invalid skill path: {skill["path"]}')
+    directory = root / 'skills' / name
+    text = (directory / 'SKILL.md').read_text()
+    match = SKILL_FRONTMATTER.match(text)
+    if not match:
+        raise ValueError(f'expected skill frontmatter with name, description, optional allowed-tools: {name}')
+    if match.group(1).strip() != name:
+        raise ValueError(f'skill frontmatter name must match its directory: {name}')
+    if not text[match.end():].startswith(skill_marker(name, skill['version']) + '\n'):
+        raise ValueError(f'skill version mismatch: {name}')
+    listed = {'SKILL.md': skill['sha256']}
+    for extra in skill.get('files', []):
+        parts = extra['path'].split('/')
+        if extra['path'] in listed or any(part in ('', '.', '..') for part in parts):
+            raise ValueError(f'unsafe or duplicate skill file path: {name}/{extra["path"]}')
+        listed[extra['path']] = extra['sha256']
+    actual = {str(path.relative_to(directory)): hashlib.sha256(path.read_bytes()).hexdigest()
+              for path in directory.rglob('*') if path.is_file()}
+    if set(actual) != set(listed):
+        raise ValueError(f'skill files not listed in the manifest, or listed but missing: {name}')
+    for path, digest in listed.items():
+        if actual[path] != digest:
+            raise ValueError(f'skill file hash mismatch: {name}/{path}; update its version and manifest')
+
+
+def validate_skills(root):
+    manifest = json.loads((root / 'skills-manifest.json').read_text())
+    if manifest['schema_version'] != 1:
+        raise ValueError('unsupported skills manifest version')
+    expected = set()
+    for skill in manifest['skills']:
+        validate_skill(root, skill)
+        if skill['name'] in expected:
+            raise ValueError(f'duplicate skill: {skill["name"]}')
+        expected.add(skill['name'])
+    actual = {path.name for path in (root / 'skills').iterdir() if path.is_dir()}
+    if actual != expected:
+        raise ValueError('skills manifest does not cover every skill directory')
+    return len(expected)
+
+
 def validate_bootstrap(root):
     if (root / 'CLAUDE.md').read_text() != '@AGENTS.md\n':
         raise ValueError('CLAUDE.md must only import AGENTS.md; edit AGENTS.md instead')
@@ -81,4 +143,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     validate_bootstrap(root)
-    print(f'Validated {validate(root, args.hotsheet)} selectable rules')
+    print(f'Validated {validate(root, args.hotsheet)} selectable rules and {validate_skills(root)} skills')

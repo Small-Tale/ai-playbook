@@ -1,7 +1,8 @@
 # Small Tale AI playbook
 
 Reusable Hot Sheet guidance maintained by Small Tale Inc. Projects may consume all
-or selected rules with Rulesync. Hot Sheet's built-in setup remains the default and
+or selected rules with Rulesync, and selected [skills](#skills) through Hot Sheet 2's
+project-guidance picker. Hot Sheet's built-in setup remains the default and
 does not require Rulesync, a network connection, or this checkout.
 
 | Selectable name | Section version | Purpose |
@@ -69,27 +70,57 @@ the single import line, and preview with `hotsheet-cli setup --diagnose --projec
 which is read-only.
 
 HS2-specific engineering policy (Kerf, providers, build gates, product terminology),
-plugin manifests, tool integrations, legacy migration bodies, and skill adapters stay
-in Hot Sheet 2. They are implementation contracts rather than general rule prose.
+plugin manifests, tool integrations, legacy migration bodies, and the Hot Sheet skill
+adapters stay in Hot Sheet 2. They are implementation contracts rather than general
+rule prose.
+
+## Skills
+
+Skills are complete, tool-neutral workflows that a project installs into each AI tool's
+skill directory, as opposed to rules, which are instruction prose merged into `AGENTS.md`.
+Each one is `skills/<name>/SKILL.md` plus any helper files beside it. Hot Sheet 2's
+project-guidance picker imports them the same way it imports rules (HS2-2RD1M1):
+`hotsheet-cli guidance --project . register` caches every `skills/<name>/` directory of
+the pinned commit, `guidance select --source ai-playbook --rule … --skill <name>` selects
+one, and `guidance apply` writes it into every detected tool's skill directory
+(`.claude/skills/<name>/`, `.agents/skills/<name>/`), upgrading a copy that still matches
+a published body and leaving a locally edited one alone. Rulesync is not involved.
+
+| Selectable name | Skill version | Purpose |
+| --- | --- | --- |
+| `analyze-code-quality` | 1 | Run every declared gate, measure coverage against the project's floors, check documented anti-patterns, audit untested state transitions, report with tickets |
+| `check-code-hygiene` | 1 | Standardization, readability, maintenance complexity, defensive coding, shell scripts; prioritized, ticketed findings |
+| `check-requirements-against-code` | 1 | Requirements versus every surface; synchronize the codebase map, requirements summary, and coverage record in place |
+
+Skills take the project's own `AGENTS.md`, manifests, CI workflows, and synthesis documents
+as the authority for surfaces, commands, and thresholds; they carry recipes and report
+formats, never another project's crate list. They follow the same naming convention as
+rules: an owner prefix when one applies, none for a general skill. `skills-manifest.json`
+records each skill's version, the SHA-256 of its `SKILL.md`, tags, optional owner, and any
+helper files with their hashes. The first body line after the frontmatter is the version
+marker `<!-- ai-playbook:skill name=<name> v=<version> -->`. Validation rejects an unlisted
+skill directory, an unlisted helper file, a frontmatter `name` that differs from the
+directory, and a hash or marker that disagrees with the manifest.
 
 ## Ownership and changes
 
 Propose changes here through a reviewed commit or pull request. Change the source
-rule, increase its embedded section version, and update its manifest version and
-SHA-256 body hash together. Preserve managed marker names. A prose change that affects
+rule or skill, increase its embedded version, and update its manifest version and
+SHA-256 hash together. Preserve managed marker names. A prose change that affects
 behavior requires downstream setup/refresh verification before release. Do not edit
 generated snapshots in Hot Sheet 2 independently; update its pinned source revision.
 
 Each release uses an annotated immutable `vMAJOR.MINOR.PATCH` tag. Never move or reuse
-a published tag. Increase major for removed/renamed rules or incompatible markers,
-minor for new rules or compatible behavior changes, and patch for corrections that
-preserve behavior. Section versions increase independently whenever a body changes.
-Consumers can pin a full commit SHA; a tag plus a committed Rulesync lockfile also
-records the exact resolved commit. `main` is a development branch, not an immutable pin.
+a published tag. Increase major for removed/renamed rules or skills or incompatible
+markers, minor for new rules or skills or compatible behavior changes, and patch for
+corrections that preserve behavior. Section and skill versions increase independently
+whenever a body changes. Consumers can pin a full commit SHA; a tag plus a committed
+Rulesync lockfile also records the exact resolved commit. `main` is a development
+branch, not an immutable pin.
 
 Before publishing, run the checks below and create the annotated release tag only on
-the verified commit, then push that commit and tag. Release notes list changed rule
-names, section versions, and downstream migration requirements.
+the verified commit, then push that commit and tag. Release notes list changed rule and
+skill names, their versions, and downstream migration requirements.
 
 ## Validation
 
