@@ -63,6 +63,17 @@
         "general",
         "security"
       ]
+    },
+    {
+      "name": "feature-health",
+      "path": "skills/feature-health/SKILL.md",
+      "version": 1,
+      "sha256": "831579108d42d1bef46211b620312ff32b8c4ef9a3c8958b718c18cc3c8db1b2",
+      "tags": [
+        "general",
+        "documentation",
+        "testing"
+      ]
     }
   ]
 }
