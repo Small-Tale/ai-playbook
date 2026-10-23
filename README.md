@@ -20,7 +20,7 @@ does not require Rulesync, a network connection, or this checkout.
 | `web-client-organization` | 1 | Directory roles, component granularity, CSS ownership, size limits |
 | `typescript-lint-and-format` | 1 | Prettier, strict type-aware ESLint, tsconfig defaults |
 | `rust-lint-and-format` | 1 | Clippy, rustfmt, toolchain pin, test isolation |
-| `playwright-operations` | 1 | Per-worker isolation, readiness waits, real geometry, flake criteria |
+| `playwright-operations` | 2 | Per-worker isolation, readiness waits, real geometry, flake criteria |
 | `kerf-ui-usage` | 2 | Kerf guidance retrieval order, gates, Web Awesome policy, component gaps |
 | `kerf-ui-upgrades` | 1 | Lockstep Kerf package upgrades |
 | `kerf-ui-catalog-demos` | 1 | Catalog demos are the production components, exercised for real |

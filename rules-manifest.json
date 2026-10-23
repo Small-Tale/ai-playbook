@@ -175,8 +175,8 @@
     {
       "name": "playwright-operations",
       "path": "rules/playwright-operations.md",
-      "version": 1,
-      "sha256": "b6e43b7b2eadb6ca04c87436dfac387eccf00ec7dc54c3f76a45b53b1e0a026a",
+      "version": 2,
+      "sha256": "4b2c5efcc10a2046bd4bec703da6c54c1f33db08f22ac5faf0ac8805cc21ded4",
       "owner": "playwright",
       "tags": [
         "playwright",
