@@ -211,8 +211,8 @@
     {
       "name": "kerf-ui-catalog-demos",
       "path": "rules/kerf-ui-catalog-demos.md",
-      "version": 1,
-      "sha256": "ce21e4ba010d600425a127ec1bbb9a8c64e03fa3886eb0d8e5926e954d4ad57e",
+      "version": 2,
+      "sha256": "aa440b6725249869b6481c53cff54a9c2daa9169128a89b6456889befc2c58ee",
       "owner": "kerf-ui",
       "tags": [
         "kerf-ui",

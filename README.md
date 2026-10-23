@@ -23,7 +23,7 @@ does not require Rulesync, a network connection, or this checkout.
 | `playwright-operations` | 2 | Per-worker isolation, readiness waits, real geometry, flake criteria |
 | `kerf-ui-usage` | 2 | Kerf guidance retrieval order, gates, Web Awesome policy, component gaps |
 | `kerf-ui-upgrades` | 1 | Lockstep Kerf package upgrades |
-| `kerf-ui-catalog-demos` | 1 | Catalog demos are the production components, exercised for real |
+| `kerf-ui-catalog-demos` | 2 | Catalog demos are the production components, exercised for real |
 | `kerf-ui-interaction-defaults` | 1 | Pointer to Kerf's consumer house grammar; deviations only on record |
 | `git-commit-and-push` | 1 | Commit shape, staging by path, history safety, declared push policy |
 | `release-scripts` | 1 | One resumable release command that tags; CI publishes from the tag |
