@@ -32,6 +32,17 @@
         "quality",
         "documentation"
       ]
+    },
+    {
+      "name": "technical-changelog",
+      "path": "skills/technical-changelog/SKILL.md",
+      "version": 1,
+      "sha256": "e0a72c839caf65460d4a0f4bf54f3b137c28fc431b4474a2bbf1aedc57728f68",
+      "tags": [
+        "general",
+        "release",
+        "documentation"
+      ]
     }
   ]
 }
