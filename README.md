@@ -7,14 +7,14 @@ does not require Rulesync, a network connection, or this checkout.
 
 | Selectable name | Section version | Purpose |
 | --- | --- | --- |
-| `hotsheet-ticket-driven-work` | 6 | Ticket lifecycle, follow-ups, scope fidelity, evidence, and note hygiene |
+| `hotsheet-ticket-driven-work` | 7 | Ticket lifecycle, follow-ups, scope fidelity, evidence, and note hygiene |
 | `hotsheet-testing-philosophy` | 7 | Risk tiers, behavioral coverage, policy tests, and verification |
 | `hotsheet-requirements-documentation` | 4 | Human requirements, concise AI summaries, and the UI conventions doc |
 | `hotsheet-visual-qa` | 2 | Real rendered inspection and evidence |
 | `hotsheet-workflow` | 65 | Hot Sheet CLI/MCP workflow, claims, phases, and confidence |
 | `project-bootstrap` | 1 | Day-one gate, skeleton, docs set, and reference parity |
 | `conventions-as-code` | 2 | Policy tests (source, CSS, instruction files) and lint/doctor suppression governance |
-| `test-operations` | 2 | Isolation, build-once, flake and quarantine policy, quiet output |
+| `test-operations` | 3 | Isolation, build-once, flake and quarantine policy, quiet output |
 | `ui-composition` | 3 | Design-system-first construction process |
 | `ui-evaluation` | 1 | Judging a rendered UI and what passing tools do not prove |
 | `customer-data-hygiene` | 1 | No customer content in tickets, logs, fixtures, or telemetry |
@@ -51,7 +51,9 @@ five default sections, so the workflow rule no longer carries its own `## Testin
 them too. The workflow keeps `## Commit hygiene` (one commit per ticket, the final remote
 CI exception, the shared batch gate) because `git-commit-and-push` is opt-in; that rule
 defers to it and adds only commit shape and the push policy. `test-operations` likewise
-defers quiet output to `hotsheet-testing-philosophy`. A policy test in
+defers quiet output and rebuilt-instance realism to `hotsheet-testing-philosophy`, and
+`hotsheet-ticket-driven-work` leaves commit slugs to the workflow and after-images to
+`hotsheet-visual-qa` (HS2-R7G5KB). A policy test in
 `tests/test_rules.py` fails when one of these topics gains a second owner.
 
 The maintained sources are the direct Markdown children of `rules/`. Rulesync

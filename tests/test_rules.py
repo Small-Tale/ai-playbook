@@ -158,6 +158,12 @@ class RulesTests(unittest.TestCase):
             'Final remote CI exception': 'hotsheet-workflow',
             'Use the full-suite CI run as the shared batch gate': 'hotsheet-workflow',
             'Commit a finished, verified ticket before starting the next one': None,
+            # HS2-R7G5KB
+            'names every ticket slug it addresses': 'hotsheet-workflow',
+            'Name every addressed ticket slug': None,
+            'problem or design image': 'hotsheet-visual-qa',
+            "never test against the user's running host": 'hotsheet-testing-philosophy',
+            "user's running host": 'hotsheet-testing-philosophy',
         }
         for phrase, owner in owners.items():
             found = sorted(name for name, body in bodies.items() if phrase in body)

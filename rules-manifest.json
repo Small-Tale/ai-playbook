@@ -6,8 +6,8 @@
     {
       "name": "hotsheet-ticket-driven-work",
       "path": "rules/hotsheet-ticket-driven-work.md",
-      "version": 6,
-      "sha256": "603b3f5622d10a6f73ae36114ecfd46948a977e0619c418d133e93085bde11bc",
+      "version": 7,
+      "sha256": "4d6ee12550ccd115fb308176337b6051506c04c31fc03918ba9c994a8f23d0f0",
       "owner": "hotsheet",
       "tags": [
         "hotsheet",
@@ -101,8 +101,8 @@
     {
       "name": "test-operations",
       "path": "rules/test-operations.md",
-      "version": 2,
-      "sha256": "a04bbbc5663ae3d43bd3ef3a9b322ba6872e0d68c33a2f85cb97d6e88a634ae1",
+      "version": 3,
+      "sha256": "7266bdcc842de82cb5e468c363e2dd856672f5925ca2904d27ab3d3db239558b",
       "tags": [
         "general",
         "testing"
