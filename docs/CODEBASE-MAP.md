@@ -13,7 +13,8 @@
 - `scripts/check_rules.py`: standard-library rule, skill, and bootstrap validation, plus
   optional bundle comparison.
 - `tests/test_rules.py`: valid, changed, unlisted, version, downstream drift,
-  `CLAUDE.md` import, and `.gitignore` machine-local coverage cases.
+  `CLAUDE.md` import, `.gitignore` machine-local coverage cases, and the one-owner-per-topic
+  policy for overlapping sections (HS2-8S1KZG).
 - `tests/test_skills.py`: import layout, changed and unlisted skills and helper files, version
   marker, frontmatter name, naming, owner prefix, and unsafe path cases.
 - `AGENTS.md`, `.agents/skills/`, `.claude/skills/`: preserved contributor bootstrap;

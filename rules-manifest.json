@@ -20,8 +20,8 @@
     {
       "name": "hotsheet-testing-philosophy",
       "path": "rules/hotsheet-testing-philosophy.md",
-      "version": 6,
-      "sha256": "c8058266c2a7412c6b3039fd8b107903911f99e06b25af8a41bc2f277c16ef17",
+      "version": 7,
+      "sha256": "6cbd9b2e585a4cbd461a2bc720d1874be0ca9e96fc9f3fa18d872c3f5598ce7c",
       "owner": "hotsheet",
       "tags": [
         "hotsheet",
@@ -63,8 +63,8 @@
     {
       "name": "hotsheet-workflow",
       "path": "rules/hotsheet-workflow.md",
-      "version": 64,
-      "sha256": "3867d18cc926d08932cb42d256824bd1a4d1ee1afa0f6fc251ae8f5457635815",
+      "version": 65,
+      "sha256": "0c5bccf2208534cf08af5582a1c68295c7274c85ad1c39d72a455ff8558fd75b",
       "owner": "hotsheet",
       "tags": [
         "hotsheet",
@@ -101,8 +101,8 @@
     {
       "name": "test-operations",
       "path": "rules/test-operations.md",
-      "version": 1,
-      "sha256": "008463c07ab2498fe18f63aa317b9c76324dc1770e03086d025317a61c454420",
+      "version": 2,
+      "sha256": "a04bbbc5663ae3d43bd3ef3a9b322ba6872e0d68c33a2f85cb97d6e88a634ae1",
       "tags": [
         "general",
         "testing"
@@ -224,8 +224,8 @@
     {
       "name": "git-commit-and-push",
       "path": "rules/git-commit-and-push.md",
-      "version": 1,
-      "sha256": "790e1a5fbc8f6d57aee67a367fa710ec33981d6b9b8fbdd7fba0ebf8427f3b38",
+      "version": 2,
+      "sha256": "783f1e5e1abe74ea4e45c19dfd49631465c9baa5b5362bdaa735ae50e542d209",
       "tags": [
         "general",
         "git",

@@ -4,7 +4,7 @@ targets: ["*"]
 description: "Test isolation, build-once, flake and quarantine policy, and quiet output"
 ---
 
-<!-- hotsheet:begin section=test-operations v=1 -->
+<!-- hotsheet:begin section=test-operations v=2 -->
 
 ## Test Operations
 
@@ -13,7 +13,7 @@ description: "Test isolation, build-once, flake and quarantine policy, and quiet
 - **Waiting.** Wait on events, readiness signals, or state, never fixed delays. Fixtures that simulate pending responses gate on a promise or channel, not a timer.
 - **Flakes.** A flake fix is done when the test passes repeatedly with retries disabled under full-suite load (for example `--repeat-each=20 --retries=0`). Retries run only in the full CI job, bounded at two, visible in the report, and every retried test gets a ticket. Quarantine markers name the fix ticket, one table row per marker, checked one-to-one in CI. A retry or quarantine is a reprieve, not a fix.
 - **Realism.** Reproduce the user's actual steps or command before claiming a fix, on the rebuilt instance, never against the user's running host or a stale build kept open from before the change.
-- **Output.** Run suites through a failure-only wrapper that prints a summary, capped failure excerpts, and a log path; keep a slowest-tests profile and act on it.
+- **Output.** The quiet-output rule lives in `hotsheet-testing-philosophy`; the project's failure-only wrapper prints a summary, capped failure excerpts, and a log path. Keep a slowest-tests profile and act on it.
 - **Record.** A script validates the coverage matrix (unit, end-to-end, manual per feature) by checking each status against its evidence paths; the manual test plan holds only what CI cannot do reliably.
 
 <!-- hotsheet:end section=test-operations -->

@@ -4,13 +4,13 @@ targets: ["*"]
 description: "Commit shape, staging discipline, history safety, and a declared push policy"
 ---
 
-<!-- hotsheet:begin section=git-commit-and-push v=1 -->
+<!-- hotsheet:begin section=git-commit-and-push v=2 -->
 
 ## Git Commit and Push
 
 Every repository declares its push policy in its project instructions. An agent that cannot find one does not guess: it commits, files a ticket to add the declaration, and leaves the push to a person. Commit discipline is the same everywhere.
 
-- **One commit per ticket.** Commit a finished, verified ticket before starting the next one. Combine tickets in one commit only when their changes cannot be separated safely, and name every slug the commit addresses.
+- **One commit per ticket.** The Hot Sheet workflow's commit hygiene owns this rule (one commit per finished, verified ticket, naming every slug it addresses); this rule adds the commit's shape and the push policy.
 - **Subject shape.** `<SLUG> <imperative summary>`, slug first so `git log --oneline` reads as a ticket list, under 72 characters, no trailing period, no type prefix. The only exception is the release script's own `release: vX.Y.Z` commit. The body says why the change was made and what behavior changed, not which files; it names follow-up slugs and any deliberate deviation from a rule. A tool may draft the body from the staged diff (`gitgist-release-notes`); the author edits it and keeps the subject shape.
 - **Stage by path.** Stage named files, never `git add -A` or `git add .`, and read `git diff --cached` before every commit to remove anything you did not change. Generated artifacts regenerate in the same commit as their source and are staged by name.
 - **Never rewrite shared history.** No amend, rebase, reset, or force-push on a commit that has reached the shipping branch or any remote; fix forward with a new commit. Local unpushed commits may be amended before they leave the machine. Never pass `--no-verify`: a failing hook is a failing gate, and the fix is the code, not the flag.

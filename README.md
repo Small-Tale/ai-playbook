@@ -8,13 +8,13 @@ does not require Rulesync, a network connection, or this checkout.
 | Selectable name | Section version | Purpose |
 | --- | --- | --- |
 | `hotsheet-ticket-driven-work` | 6 | Ticket lifecycle, follow-ups, scope fidelity, evidence, and note hygiene |
-| `hotsheet-testing-philosophy` | 6 | Risk tiers, behavioral coverage, policy tests, and verification |
+| `hotsheet-testing-philosophy` | 7 | Risk tiers, behavioral coverage, policy tests, and verification |
 | `hotsheet-requirements-documentation` | 4 | Human requirements, concise AI summaries, and the UI conventions doc |
 | `hotsheet-visual-qa` | 2 | Real rendered inspection and evidence |
-| `hotsheet-workflow` | 64 | Hot Sheet CLI/MCP workflow, claims, phases, and confidence |
+| `hotsheet-workflow` | 65 | Hot Sheet CLI/MCP workflow, claims, phases, and confidence |
 | `project-bootstrap` | 1 | Day-one gate, skeleton, docs set, and reference parity |
 | `conventions-as-code` | 2 | Policy tests (source, CSS, instruction files) and lint/doctor suppression governance |
-| `test-operations` | 1 | Isolation, build-once, flake and quarantine policy, quiet output |
+| `test-operations` | 2 | Isolation, build-once, flake and quarantine policy, quiet output |
 | `ui-composition` | 3 | Design-system-first construction process |
 | `ui-evaluation` | 1 | Judging a rendered UI and what passing tools do not prove |
 | `customer-data-hygiene` | 1 | No customer content in tickets, logs, fixtures, or telemetry |
@@ -26,7 +26,7 @@ does not require Rulesync, a network connection, or this checkout.
 | `kerf-ui-upgrades` | 1 | Lockstep Kerf package upgrades |
 | `kerf-ui-catalog-demos` | 2 | Catalog demos are the production components, exercised for real |
 | `kerf-ui-interaction-defaults` | 1 | Pointer to Kerf's consumer house grammar; deviations only on record |
-| `git-commit-and-push` | 1 | Commit shape, staging by path, history safety, declared push policy |
+| `git-commit-and-push` | 2 | Commit shape, staging by path, history safety, declared push policy |
 | `release-scripts` | 1 | One resumable release command that tags; CI publishes from the tag |
 | `gitgist-release-notes` | 1 | gitgist for release notes and commit drafts, configured once |
 | `deployment-scripts` | 1 | Phased, re-runnable deploy script with SHA-tagged artifacts |
@@ -42,6 +42,17 @@ policies (`push-per-ticket` or `push-per-batch`) in its instructions. The Hot Sh
 workflow's own "pushing is up to this repository" sentence defers to that declaration.
 This repository declares `push-per-ticket` in `.hotsheet2/settings.json`; Hot Sheet setup
 and refresh render it into the push-policy block of `AGENTS.md` and the skill files.
+
+Each topic has one owning rule, so a generated `AGENTS.md` never states it twice
+(HS2-8S1KZG). Testing lives in `hotsheet-testing-philosophy` and requirements docs in
+`hotsheet-requirements-documentation`; both ship with `hotsheet-workflow` in Hot Sheet's
+five default sections, so the workflow rule no longer carries its own `## Testing` or
+`## Requirements & docs` block, and a project that selects the workflow should select
+them too. The workflow keeps `## Commit hygiene` (one commit per ticket, the final remote
+CI exception, the shared batch gate) because `git-commit-and-push` is opt-in; that rule
+defers to it and adds only commit shape and the push policy. `test-operations` likewise
+defers quiet output to `hotsheet-testing-philosophy`. A policy test in
+`tests/test_rules.py` fails when one of these topics gains a second owner.
 
 The maintained sources are the direct Markdown children of `rules/`. Rulesync
 frontmatter is packaging; the body retains Hot Sheet's managed markers and version.

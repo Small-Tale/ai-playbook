@@ -140,6 +140,29 @@ class RulesTests(unittest.TestCase):
         """HS2-9NE1WE: the unit-test gate must leave the clone clean."""
         self.assertIn('__pycache__/', (ROOT / '.gitignore').read_text().splitlines())
 
+    def test_each_topic_has_one_owning_rule(self):
+        """HS2-8S1KZG: a generated AGENTS.md states each topic once, in its owning rule."""
+        bodies = {path.stem: checker.rule_body(path.read_text())
+                  for path in (ROOT / 'rules').glob('*.md')}
+        headings = [line for body in bodies.values() for line in body.splitlines()
+                    if line.startswith('## ')]
+        self.assertEqual(len(headings), len(set(headings)), 'duplicate section heading')
+        workflow = bodies['hotsheet-workflow']
+        self.assertNotIn('\n## Testing\n', workflow)
+        self.assertNotIn('\n## Requirements & docs\n', workflow)
+        owners = {
+            'failure-only reporters': 'hotsheet-testing-philosophy',
+            'Rerun only what failed': 'hotsheet-testing-philosophy',
+            'Coverage is a floor': None,
+            'transition-matrix': None,
+            'Final remote CI exception': 'hotsheet-workflow',
+            'Use the full-suite CI run as the shared batch gate': 'hotsheet-workflow',
+            'Commit a finished, verified ticket before starting the next one': None,
+        }
+        for phrase, owner in owners.items():
+            found = sorted(name for name, body in bodies.items() if phrase in body)
+            self.assertEqual(found, [owner] if owner else [], phrase)
+
 
 if __name__ == '__main__':
     unittest.main()
