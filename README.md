@@ -7,7 +7,7 @@ does not require Rulesync, a network connection, or this checkout.
 
 | Selectable name | Section version | Purpose |
 | --- | --- | --- |
-| `hotsheet-ticket-driven-work` | 7 | Ticket lifecycle, follow-ups, scope fidelity, evidence, and note hygiene |
+| `hotsheet-ticket-driven-work` | 8 | Ticket lifecycle, follow-ups, scope fidelity, evidence, and note hygiene |
 | `hotsheet-testing-philosophy` | 7 | Risk tiers, behavioral coverage, policy tests, and verification |
 | `hotsheet-requirements-documentation` | 4 | Human requirements, concise AI summaries, and the UI conventions doc |
 | `hotsheet-visual-qa` | 2 | Real rendered inspection and evidence |
@@ -16,7 +16,7 @@ does not require Rulesync, a network connection, or this checkout.
 | `conventions-as-code` | 2 | Policy tests (source, CSS, instruction files) and lint/doctor suppression governance |
 | `test-operations` | 3 | Isolation, build-once, flake and quarantine policy, quiet output |
 | `ui-composition` | 3 | Design-system-first construction process |
-| `ui-evaluation` | 1 | Judging a rendered UI and what passing tools do not prove |
+| `ui-evaluation` | 2 | Judging a rendered UI and what passing tools do not prove |
 | `customer-data-hygiene` | 1 | No customer content in tickets, logs, fixtures, or telemetry |
 | `web-client-organization` | 1 | Directory roles, component granularity, CSS ownership, size limits |
 | `typescript-lint-and-format` | 1 | Prettier, strict type-aware ESLint, tsconfig defaults |
@@ -53,7 +53,10 @@ CI exception, the shared batch gate) because `git-commit-and-push` is opt-in; th
 defers to it and adds only commit shape and the push policy. `test-operations` likewise
 defers quiet output and rebuilt-instance realism to `hotsheet-testing-philosophy`, and
 `hotsheet-ticket-driven-work` leaves commit slugs to the workflow and after-images to
-`hotsheet-visual-qa` (HS2-R7G5KB). A policy test in
+`hotsheet-visual-qa` (HS2-R7G5KB). Since HS2-B39GQ9 it also leaves ticket creation, claims,
+follow-ups, the feedback rule, and the completion checklist to the workflow and keeps only
+what the workflow does not say; `ui-evaluation` builds on `hotsheet-visual-qa` instead of
+restating its evidence and defect rules. A policy test in
 `tests/test_rules.py` fails when one of these topics gains a second owner.
 
 The maintained sources are the direct Markdown children of `rules/`. Rulesync

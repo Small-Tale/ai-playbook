@@ -164,6 +164,15 @@ class RulesTests(unittest.TestCase):
             'problem or design image': 'hotsheet-visual-qa',
             "never test against the user's running host": 'hotsheet-testing-philosophy',
             "user's running host": 'hotsheet-testing-philosophy',
+            # HS2-B39GQ9
+            'Create follow-up tickets immediately': None,
+            'Before completing, verify the scope': None,
+            'cannot proceed without a user decision': None,
+            'keep its phase and ETA current': None,
+            'claim_count': 'hotsheet-ticket-driven-work',
+            'never correctness evidence': 'hotsheet-visual-qa',
+            'wide-narrow-wide': None,
+            "matches the before's component": None,
         }
         for phrase, owner in owners.items():
             found = sorted(name for name, body in bodies.items() if phrase in body)

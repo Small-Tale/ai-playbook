@@ -6,8 +6,8 @@
     {
       "name": "hotsheet-ticket-driven-work",
       "path": "rules/hotsheet-ticket-driven-work.md",
-      "version": 7,
-      "sha256": "4d6ee12550ccd115fb308176337b6051506c04c31fc03918ba9c994a8f23d0f0",
+      "version": 8,
+      "sha256": "ae6f104115778a28eaa87b4fac4733782c65f36f9de33f37a2cd5305f0890eae",
       "owner": "hotsheet",
       "tags": [
         "hotsheet",
@@ -121,8 +121,8 @@
     {
       "name": "ui-evaluation",
       "path": "rules/ui-evaluation.md",
-      "version": 1,
-      "sha256": "f19b026904b3d8fc7e214b7d0b0ffe1b1f8947f138c2c3440d2043cd8c5eb5f4",
+      "version": 2,
+      "sha256": "ce73cbeaf717dbb12f435cbc812766c1d7d8ee6fd7ff3484762008df292d28cb",
       "tags": [
         "ui",
         "testing"
