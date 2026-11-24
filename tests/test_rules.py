@@ -178,6 +178,26 @@ class RulesTests(unittest.TestCase):
             found = sorted(name for name, body in bodies.items() if phrase in body)
             self.assertEqual(found, [owner] if owner else [], phrase)
 
+    def test_hs2_js9a83_compressed_rules_preserve_lifecycle_and_retry_contracts(self):
+        workflow = checker.rule_body((ROOT / 'rules/hotsheet-workflow.md').read_text())
+        for contract in ('Claim before editing', 'Release whenever work stops',
+                         'File follow-ups immediately, without asking', '## Preliminary thoughts',
+                         '## Confidence', '--note-confidence', 'high/medium/low',
+                         'CI gate commit:', 'complete only after green covering CI',
+                         'Never backfill phases', 'Never execute notification commands',
+                         'Pushing is up to this repository'):
+            self.assertIn(contract, workflow)
+        # HS2-JS9A83: setup replaces this byte-exact legacy policy anchor.
+        self.assertIn(
+            '**Pushing is up to this repository.** Follow whatever push/PR/review conventions this project\n'
+            'already uses; this default guidance does not require or forbid pushing on its own.', workflow)
+        operations = checker.rule_body((ROOT / 'rules/test-operations.md').read_text())
+        for contract in ('Retries occur only in full CI, at most two',
+                         'ticket for every retried test', 'one-to-one in CI',
+                         'without retries under full-suite load',
+                         'global setup', 'never fixed delays'):
+            self.assertIn(contract, operations)
+
 
 if __name__ == '__main__':
     unittest.main()

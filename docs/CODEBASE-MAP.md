@@ -15,6 +15,11 @@
 - `tests/test_rules.py`: valid, changed, unlisted, version, downstream drift,
   `CLAUDE.md` import, `.gitignore` machine-local coverage cases, and the one-owner-per-topic
   policy for overlapping sections (HS2-8S1KZG).
+- `scripts/check_instruction_budget.py`, `instruction-budgets.json`: per-rule UTF-8 body
+  and combined ceilings, enforced in CI; optional read-only generated-file measurements.
+- `tests/test_instruction_budget.py`: source ceilings, total/selection failures, Unicode
+  accounting and real CLI generated-file reporting. `docs/INSTRUCTION-BUDGETS.md` records
+  measured consumer generation and adoption requirements (HS2-JS9A83).
 - `tests/test_skills.py`: import layout, changed and unlisted skills and helper files, version
   marker, frontmatter name, naming, owner prefix, and unsafe path cases.
 - `AGENTS.md`, `.agents/skills/`, `.claude/skills/`: preserved contributor bootstrap;

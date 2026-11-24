@@ -6,8 +6,8 @@
     {
       "name": "hotsheet-ticket-driven-work",
       "path": "rules/hotsheet-ticket-driven-work.md",
-      "version": 8,
-      "sha256": "ae6f104115778a28eaa87b4fac4733782c65f36f9de33f37a2cd5305f0890eae",
+      "version": 9,
+      "sha256": "3b5ad2e55f7d23a436e238d38d93761bc65c901a885dcbb1d9ce651fe4ff399c",
       "owner": "hotsheet",
       "tags": [
         "hotsheet",
@@ -20,8 +20,8 @@
     {
       "name": "hotsheet-testing-philosophy",
       "path": "rules/hotsheet-testing-philosophy.md",
-      "version": 7,
-      "sha256": "6cbd9b2e585a4cbd461a2bc720d1874be0ca9e96fc9f3fa18d872c3f5598ce7c",
+      "version": 8,
+      "sha256": "ceadd458af0db42467c7ae98d46aea86adcb4e31c8950bfba188117897d4252a",
       "owner": "hotsheet",
       "tags": [
         "hotsheet",
@@ -63,8 +63,8 @@
     {
       "name": "hotsheet-workflow",
       "path": "rules/hotsheet-workflow.md",
-      "version": 65,
-      "sha256": "0c5bccf2208534cf08af5582a1c68295c7274c85ad1c39d72a455ff8558fd75b",
+      "version": 66,
+      "sha256": "4e7e47a1aadb863388698dd0a8a27af38e5380b9241ef8f7f7f34d8b8e55024c",
       "owner": "hotsheet",
       "tags": [
         "hotsheet",
@@ -101,8 +101,8 @@
     {
       "name": "test-operations",
       "path": "rules/test-operations.md",
-      "version": 3,
-      "sha256": "7266bdcc842de82cb5e468c363e2dd856672f5925ca2904d27ab3d3db239558b",
+      "version": 4,
+      "sha256": "71c0582b9cd380847d667f18a76a3f0b6ecf40330ded20671bb4e9b1ccd2f984",
       "tags": [
         "general",
         "testing"

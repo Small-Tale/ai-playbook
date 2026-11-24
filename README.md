@@ -7,14 +7,14 @@ does not require Rulesync, a network connection, or this checkout.
 
 | Selectable name | Section version | Purpose |
 | --- | --- | --- |
-| `hotsheet-ticket-driven-work` | 8 | Ticket lifecycle, follow-ups, scope fidelity, evidence, and note hygiene |
-| `hotsheet-testing-philosophy` | 7 | Risk tiers, behavioral coverage, policy tests, and verification |
+| `hotsheet-ticket-driven-work` | 9 | Ticket lifecycle, follow-ups, scope fidelity, evidence, and note hygiene |
+| `hotsheet-testing-philosophy` | 8 | Risk tiers, behavioral coverage, policy tests, and verification |
 | `hotsheet-requirements-documentation` | 4 | Human requirements, concise AI summaries, and the UI conventions doc |
 | `hotsheet-visual-qa` | 2 | Real rendered inspection and evidence |
-| `hotsheet-workflow` | 65 | Hot Sheet CLI/MCP workflow, claims, phases, and confidence |
+| `hotsheet-workflow` | 66 | Hot Sheet CLI/MCP workflow, claims, phases, and confidence |
 | `project-bootstrap` | 1 | Day-one gate, skeleton, docs set, and reference parity |
 | `conventions-as-code` | 2 | Policy tests (source, CSS, instruction files) and lint/doctor suppression governance |
-| `test-operations` | 3 | Isolation, build-once, flake and quarantine policy, quiet output |
+| `test-operations` | 4 | Isolation, build-once, flake and quarantine policy, quiet output |
 | `ui-composition` | 3 | Design-system-first construction process |
 | `ui-evaluation` | 2 | Judging a rendered UI and what passing tools do not prove |
 | `customer-data-hygiene` | 1 | No customer content in tickets, logs, fixtures, or telemetry |
@@ -39,7 +39,7 @@ rather than restating it; Kerf owns that document and its design philosophy.
 
 `git-commit-and-push` requires each adopting project to declare one of two named push
 policies (`push-per-ticket` or `push-per-batch`) in its instructions. The Hot Sheet
-workflow's own "pushing is up to this repository" sentence defers to that declaration.
+workflow defers to that declaration.
 This repository declares `push-per-ticket` in `.hotsheet2/settings.json`; Hot Sheet setup
 and refresh render it into the push-policy block of `AGENTS.md` and the skill files.
 
@@ -58,6 +58,15 @@ follow-ups, the feedback rule, and the completion checklist to the workflow and 
 what the workflow does not say; `ui-evaluation` builds on `hotsheet-visual-qa` instead of
 restating its evidence and defect rules. A policy test in
 `tests/test_rules.py` fails when one of these topics gains a second owner.
+
+Instruction budgets and measured consumer sizes are recorded in
+[the budget report](docs/INSTRUCTION-BUDGETS.md) (HS2-JS9A83). CI checks each rule's
+UTF-8 body ceiling and the total in `instruction-budgets.json`; raising a ceiling
+requires a measured, reviewed reason. These source limits do not guarantee a
+consumer's instruction-file fit. Use `--generated <AGENTS.md>` with the budget
+checker to measure actual output, including local guidance. The compressed rules
+retain binding contracts; the installed `hotsheet` skill holds queue command
+recipes. Preserve local policy, skills and pins when adopting them.
 
 The maintained sources are the direct Markdown children of `rules/`. Rulesync
 frontmatter is packaging; the body retains Hot Sheet's managed markers and version.
@@ -149,6 +158,7 @@ skill names, their versions, and downstream migration requirements.
 python3 -m pip install ruff==0.17.1  # once; matches the CI pin
 ruff check .
 python3 scripts/check_rules.py
+python3 scripts/check_instruction_budget.py
 python3 -m unittest discover -s tests -q
 python3 scripts/check_rules.py --hotsheet ../hotsheet2
 ```

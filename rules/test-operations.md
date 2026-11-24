@@ -4,15 +4,15 @@ targets: ["*"]
 description: "Test isolation, build-once, flake and quarantine policy, and quiet output"
 ---
 
-<!-- hotsheet:begin section=test-operations v=3 -->
+<!-- hotsheet:begin section=test-operations v=4 -->
 
 ## Test Operations
 
-- **Isolation.** Tests never touch the developer's real home, stores, or running services. Force an isolated home and data directory at config level (environment in the test runner or build config, not in each test), and keep a test that fails on machine-local paths in fixtures or output.
-- **Build once.** Binaries and client bundles build in the suite's global setup, skipped when fresh, never inside a test file. The full gate executes the built artifact (boot the bundle or binary and hit its health endpoint), not only builds it.
-- **Waiting.** Wait on events, readiness signals, or state, never fixed delays. Fixtures that simulate pending responses gate on a promise or channel, not a timer.
-- **Flakes.** A flake fix is done when the test passes repeatedly with retries disabled under full-suite load (for example `--repeat-each=20 --retries=0`). Retries run only in the full CI job, bounded at two, visible in the report, and every retried test gets a ticket. Quarantine markers name the fix ticket, one table row per marker, checked one-to-one in CI. A retry or quarantine is a reprieve, not a fix.
-- **Output.** The quiet-output rule lives in `hotsheet-testing-philosophy`; the project's failure-only wrapper prints a summary, capped failure excerpts, and a log path. Keep a slowest-tests profile and act on it.
-- **Record.** A script validates the coverage matrix (unit, end-to-end, manual per feature) by checking each status against its evidence paths; the manual test plan holds only what CI cannot do reliably.
+- Isolate home/data at runner or build-config level, not per test. Never touch real homes, stores or running services; retain a test rejecting machine-local fixture/output paths.
+- Build binaries/bundles once in global setup, skipping fresh builds, never per test file. The full gate runs the built artifact and its health endpoint, beyond compiling.
+- Wait for events/readiness/state, never fixed delays; pending-response fakes gate on promises/channels, not timers.
+- A flake fix must pass repeatedly without retries under full-suite load (e.g. 20 repeats). Retries occur only in full CI, at most two, visible in reports, with a ticket for every retried test. Quarantine markers name fix tickets and match a table one-to-one in CI; neither retry nor quarantine is a fix.
+- `hotsheet-testing-philosophy` owns quiet output. The failure-only wrapper prints summary, capped failure excerpts and log path. Keep and act on a slowest-tests profile.
+- Validate the feature coverage matrix by script: unit/E2E/manual statuses match evidence paths. The manual plan covers only behavior CI cannot reliably check.
 
 <!-- hotsheet:end section=test-operations -->
