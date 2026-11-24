@@ -14,7 +14,8 @@
   optional bundle comparison.
 - `tests/test_rules.py`: valid, changed, unlisted, version, downstream drift,
   `CLAUDE.md` import, `.gitignore` machine-local coverage cases, and the one-owner-per-topic
-  policy for overlapping sections (HS2-8S1KZG).
+  policy for overlapping sections (HS2-8S1KZG), plus shared lifecycle/retry and
+  release/deployment/Git/UI exception contracts (HS2-JS9A83, HS2-9JB8EE).
 - `scripts/check_instruction_budget.py`, `instruction-budgets.json`: per-rule UTF-8 body
   and combined ceilings, enforced in CI; optional read-only generated-file measurements.
 - `tests/test_instruction_budget.py`: source ceilings, total/selection failures, Unicode

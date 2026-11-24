@@ -1,5 +1,5 @@
 {
-  "total": 53760,
+  "total": 44672,
   "rules": {
     "hotsheet-ticket-driven-work": 1536,
     "hotsheet-testing-philosophy": 2560,
@@ -9,20 +9,20 @@
     "project-bootstrap": 2176,
     "conventions-as-code": 1920,
     "test-operations": 1280,
-    "ui-composition": 3200,
-    "ui-evaluation": 2048,
+    "ui-composition": 2176,
+    "ui-evaluation": 1408,
     "customer-data-hygiene": 640,
     "web-client-organization": 2176,
     "typescript-lint-and-format": 1536,
     "rust-lint-and-format": 1024,
     "playwright-operations": 1920,
-    "kerf-ui-usage": 3200,
+    "kerf-ui-usage": 2304,
     "kerf-ui-upgrades": 896,
     "kerf-ui-catalog-demos": 1536,
-    "git-commit-and-push": 3840,
-    "release-scripts": 4224,
-    "gitgist-release-notes": 2944,
-    "deployment-scripts": 2816,
-    "kerf-ui-interaction-defaults": 2816
+    "git-commit-and-push": 2304,
+    "release-scripts": 2688,
+    "gitgist-release-notes": 1664,
+    "deployment-scripts": 1792,
+    "kerf-ui-interaction-defaults": 1664
   }
 }

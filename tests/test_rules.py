@@ -198,6 +198,37 @@ class RulesTests(unittest.TestCase):
                          'global setup', 'never fixed delays'):
             self.assertIn(contract, operations)
 
+    def test_hs2_9jb8ee_compressed_rules_keep_release_and_ui_exceptions(self):
+        contracts = {
+            'release-scripts': ('tag-only from HEAD: no version bump, changelog or commit',
+                                'After a partial release commit, stage nothing and proceed to tag',
+                                'never checks out or executes repository code',
+                                'Test/build/pack jobs hold no publish credential',
+                                'never replace curated history',
+                                'Published versions are never unpublished or re-tagged'),
+            'deployment-scripts': ('stop with exit 0 until filled',
+                                   'running-service changes require confirmation',
+                                   'Secret values never enter argv',
+                                   'Never auto-approve destruction of stateful resources'),
+            'git-commit-and-push': ('never `git add -A` or `git add .`',
+                                    'Never bypass hooks', 'never guess',
+                                    'push-per-ticket', 'push-per-batch'),
+            'ui-composition': ('Bounded one-screen exception',
+                               'wait for feedback before building further',
+                               'wait before deriving further tickets or screens',
+                               'Honor explicit design-system composition exceptions',
+                               'name conflict/API and file the gap'),
+            'gitgist-release-notes': ('Never repeat repository settings as flags in CI',),
+            'kerf-ui-usage': ('Before editing any file importing', '<button type="button">',
+                              'failOn: warning',
+                              'no suppressions', 'Doctor budgets/profile exceptions only decrease'),
+        }
+        for name, phrases in contracts.items():
+            body = checker.rule_body((ROOT / f'rules/{name}.md').read_text())
+            for phrase in phrases:
+                with self.subTest(rule=name, contract=phrase):
+                    self.assertIn(phrase, body)
+
 
 if __name__ == '__main__':
     unittest.main()

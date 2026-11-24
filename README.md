@@ -15,21 +15,21 @@ does not require Rulesync, a network connection, or this checkout.
 | `project-bootstrap` | 1 | Day-one gate, skeleton, docs set, and reference parity |
 | `conventions-as-code` | 2 | Policy tests (source, CSS, instruction files) and lint/doctor suppression governance |
 | `test-operations` | 4 | Isolation, build-once, flake and quarantine policy, quiet output |
-| `ui-composition` | 3 | Design-system-first construction process |
-| `ui-evaluation` | 2 | Judging a rendered UI and what passing tools do not prove |
+| `ui-composition` | 4 | Design-system-first construction process |
+| `ui-evaluation` | 3 | Judging a rendered UI and what passing tools do not prove |
 | `customer-data-hygiene` | 1 | No customer content in tickets, logs, fixtures, or telemetry |
 | `web-client-organization` | 1 | Directory roles, component granularity, CSS ownership, size limits |
 | `typescript-lint-and-format` | 1 | Prettier, strict type-aware ESLint, tsconfig defaults |
 | `rust-lint-and-format` | 1 | Clippy, rustfmt, toolchain pin, test isolation |
 | `playwright-operations` | 2 | Per-worker isolation, readiness waits, real geometry, flake criteria |
-| `kerf-ui-usage` | 2 | Kerf guidance retrieval order, gates, Web Awesome policy, component gaps |
+| `kerf-ui-usage` | 3 | Kerf guidance retrieval order, gates, Web Awesome policy, component gaps |
 | `kerf-ui-upgrades` | 1 | Lockstep Kerf package upgrades |
 | `kerf-ui-catalog-demos` | 2 | Catalog demos are the production components, exercised for real |
-| `kerf-ui-interaction-defaults` | 1 | Pointer to Kerf's consumer house grammar; deviations only on record |
-| `git-commit-and-push` | 2 | Commit shape, staging by path, history safety, declared push policy |
-| `release-scripts` | 1 | One resumable release command that tags; CI publishes from the tag |
-| `gitgist-release-notes` | 1 | gitgist for release notes and commit drafts, configured once |
-| `deployment-scripts` | 1 | Phased, re-runnable deploy script with SHA-tagged artifacts |
+| `kerf-ui-interaction-defaults` | 2 | Pointer to Kerf's consumer house grammar; deviations only on record |
+| `git-commit-and-push` | 3 | Commit shape, staging by path, history safety, declared push policy |
+| `release-scripts` | 2 | One resumable release command that tags; CI publishes from the tag |
+| `gitgist-release-notes` | 2 | gitgist for release notes and commit drafts, configured once |
+| `deployment-scripts` | 2 | Phased, re-runnable deploy script with SHA-tagged artifacts |
 
 Rules are opinionated by design; a project that adopts one deviates only at the project
 level for a compelling or necessary reason, recorded in its own conventions document.
@@ -65,7 +65,8 @@ UTF-8 body ceiling and the total in `instruction-budgets.json`; raising a ceilin
 requires a measured, reviewed reason. These source limits do not guarantee a
 consumer's instruction-file fit. Use `--generated <AGENTS.md>` with the budget
 checker to measure actual output, including local guidance. The compressed rules
-retain binding contracts; the installed `hotsheet` skill holds queue command
+retain binding contracts, including release publisher isolation and bounded-redesign
+sign-off (HS2-9JB8EE); the installed `hotsheet` skill holds queue command
 recipes. Preserve local policy, skills and pins when adopting them.
 
 The maintained sources are the direct Markdown children of `rules/`. Rulesync

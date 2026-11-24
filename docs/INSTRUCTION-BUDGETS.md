@@ -14,9 +14,34 @@ report and reason, not just regenerating limits to silence the check.
 | test-operations v4 | 1,648 | 1,224 | 424 |
 | **Changed bodies** | **19,829** | **11,366** | **8,463** |
 
-All 23 selectable bodies total 52,227 bytes after this change. This is a source
+After the shared-rule change, all 23 selectable bodies totaled 52,227 bytes. This is a source
 payload ceiling, not a promise that every rule plus project guidance fits a
 32,768-byte instruction budget. Do not drop binding rules to make a number pass.
+
+## Specialized rules (HS2-9JB8EE)
+
+Measured against the same v1.8.0 source bodies; these eight files did not overlap
+the first ticket's edits. Binding contracts stay in the selected rules. Kerf's
+installed documents remain the authority for framework details, with explicit
+read triggers; no consumer depends on an uninstalled local playbook reference.
+
+| Rule / new version | Before bytes | New bytes | Saved |
+| --- | ---: | ---: | ---: |
+| release-scripts v2 | 4,139 | 2,675 | 1,464 |
+| git-commit-and-push v3 | 3,787 | 2,209 | 1,578 |
+| gitgist-release-notes v2 | 2,817 | 1,651 | 1,166 |
+| deployment-scripts v2 | 2,766 | 1,727 | 1,039 |
+| kerf-ui-usage v3 | 3,114 | 2,224 | 890 |
+| kerf-ui-interaction-defaults v2 | 2,795 | 1,646 | 1,149 |
+| ui-composition v4 | 3,116 | 2,129 | 987 |
+| ui-evaluation v3 | 1,937 | 1,330 | 607 |
+| **Changed bodies** | **24,471** | **15,591** | **8,880** |
+
+All rule bodies now total **43,347** bytes (reviewed ceiling **44,672**).
+Combined savings versus v1.8.0: **17,343** source bytes. Critical policy tests
+preserve tag-only betas, partial-release recovery, credential-isolated publishing,
+curated changelog history, deployment secrets/confirmation, named staging and
+push policies, Kerf gates, and the bounded one-screen sign-off exception.
 
 ## Actual generation
 
@@ -28,6 +53,7 @@ and `targets: ["agentsmd"]`. No live consumer files or pins were changed.
 | Hot Sheet 2 installed selection, pinned `02b66e656098ed5de7d2b042f37b862a8a057482` | 78,422 |
 | Same 22 selected rules updated to ai-playbook v1.8.0 | 76,581 |
 | Same selection with HS2-JS9A83 | 68,118 |
+| Same selection with both tickets | 59,238 |
 | Minimal consumer, five Hot Sheet default rules at v1.8.0 | 21,474 |
 | Same minimal consumer with HS2-JS9A83 | 13,435 |
 
@@ -42,9 +68,11 @@ requirements-documentation and visual-qa, with no local rule. Both runs use the
 same generator/configuration. These are generated measurements, not an estimate
 from subtracting source lengths.
 
-Hot Sheet 2 still exceeds 32,768 bytes by **35,350** after this ticket. Its existing
+Hot Sheet 2 still exceeds 32,768 bytes by **26,470** after both tickets.
+The final generated reduction from its installed pin is **19,184 bytes (24.5%)**. Its existing
 adoption ticket **HS2-FBHJ95** owns the consumer pin/snapshot update and local-size
-coordination. HS2-9JB8EE owns further Git/release/UI compression here.
+coordination. Follow-up **HS2-2KPPWJ** tracks the next release and adoption;
+both source tickets link it through typed follow-up relations.
 
 ## Reproduction and adoption
 
@@ -74,7 +102,8 @@ No new local-only reference is required to obey a rule.
 ## Verification record
 
 - Unit: body ceilings/total/selection failures and Unicode byte counts;
-  lifecycle, phase, confidence, CI, notification and retry contract assertions.
+  lifecycle, phase, confidence, CI, notification and retry contract assertions,
+  plus the specialized exception checks listed above.
 - End to end: budget CLI measures a real file without mutation; real Rulesync
   generation covers the 22-rule Hot Sheet 2 selection and a five-rule consumer.
 - Manual: inspect rule diffs against the prior bodies and the independent contract

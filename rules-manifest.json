@@ -111,8 +111,8 @@
     {
       "name": "ui-composition",
       "path": "rules/ui-composition.md",
-      "version": 3,
-      "sha256": "ec9abc187b5080d233223c3a828086381d4805cf8f0f2087e8aff07d5ae812f2",
+      "version": 4,
+      "sha256": "6a4d354d287ede557c67f988d6e87dcbc7dd949f9f35dd244cea090fea58c5da",
       "tags": [
         "ui",
         "design-system"
@@ -121,8 +121,8 @@
     {
       "name": "ui-evaluation",
       "path": "rules/ui-evaluation.md",
-      "version": 2,
-      "sha256": "ce73cbeaf717dbb12f435cbc812766c1d7d8ee6fd7ff3484762008df292d28cb",
+      "version": 3,
+      "sha256": "cce477c720487ce10216a86d8e90d9e7ebc7a70790a99c1961b133fed589b238",
       "tags": [
         "ui",
         "testing"
@@ -187,8 +187,8 @@
     {
       "name": "kerf-ui-usage",
       "path": "rules/kerf-ui-usage.md",
-      "version": 2,
-      "sha256": "03e28e0c03d4a0a6fae07144c9b40ecc79c934e80406b8216b715e5c4692c297",
+      "version": 3,
+      "sha256": "52de52a372558da193663d91a485e3fb0504025ea61e46844b82e9976c320db8",
       "owner": "kerf-ui",
       "tags": [
         "kerf-ui",
@@ -224,8 +224,8 @@
     {
       "name": "git-commit-and-push",
       "path": "rules/git-commit-and-push.md",
-      "version": 2,
-      "sha256": "783f1e5e1abe74ea4e45c19dfd49631465c9baa5b5362bdaa735ae50e542d209",
+      "version": 3,
+      "sha256": "b3c4d2e0bb6651152612062ad140a0437b9be9d9e0682e7a33372e44f9f64558",
       "tags": [
         "general",
         "git",
@@ -235,8 +235,8 @@
     {
       "name": "release-scripts",
       "path": "rules/release-scripts.md",
-      "version": 1,
-      "sha256": "b4752e6fc98c424e7d92d95436fc7b41db8e29864ae7537ce92281c835625df8",
+      "version": 2,
+      "sha256": "4c5f91297efd4f83adf00f08cd5c4df646bdf300a7243817d18c149252375f4d",
       "tags": [
         "general",
         "release",
@@ -246,8 +246,8 @@
     {
       "name": "gitgist-release-notes",
       "path": "rules/gitgist-release-notes.md",
-      "version": 1,
-      "sha256": "f5ecfa4c77b860c89f39e980d872bfa4d80019bbcec41cb72eb522432a9ccaf1",
+      "version": 2,
+      "sha256": "69132f5b88f4047559b9fa76e9a1a772cdc113583b58c329c47ca3a4542d6073",
       "owner": "gitgist",
       "tags": [
         "gitgist",
@@ -258,8 +258,8 @@
     {
       "name": "deployment-scripts",
       "path": "rules/deployment-scripts.md",
-      "version": 1,
-      "sha256": "e90b94032c7acaf8b35b557241dcd8b7e1837c67f94de403767a3caaf13c5c44",
+      "version": 2,
+      "sha256": "e5ab123da13e6c7e864da20c4902d758bb287ce7712c8c01381677210ff57b9a",
       "tags": [
         "general",
         "deployment",
@@ -269,8 +269,8 @@
     {
       "name": "kerf-ui-interaction-defaults",
       "path": "rules/kerf-ui-interaction-defaults.md",
-      "version": 1,
-      "sha256": "2af826fa2751e90d7cdf91d95565dd0d2ef441fe96d3543210a900afc71e690c",
+      "version": 2,
+      "sha256": "a8fb0969469f3223badcc46ba760a0a7f66d6421bab73b4da592a40c9b21c211",
       "owner": "kerf-ui",
       "tags": [
         "kerf-ui",
