@@ -11,7 +11,7 @@ does not require Rulesync, a network connection, or this checkout.
 | `hotsheet-testing-philosophy` | 8 | Risk tiers, behavioral coverage, policy tests, and verification |
 | `hotsheet-requirements-documentation` | 4 | Human requirements, concise AI summaries, and the UI conventions doc |
 | `hotsheet-visual-qa` | 2 | Real rendered inspection and evidence |
-| `hotsheet-workflow` | 66 | Hot Sheet CLI/MCP workflow, claims, phases, and confidence |
+| `hotsheet-workflow` | 67 | Hot Sheet CLI/MCP workflow, claims, phases, and confidence |
 | `project-bootstrap` | 1 | Day-one gate, skeleton, docs set, and reference parity |
 | `conventions-as-code` | 2 | Policy tests (source, CSS, instruction files) and lint/doctor suppression governance |
 | `test-operations` | 4 | Isolation, build-once, flake and quarantine policy, quiet output |

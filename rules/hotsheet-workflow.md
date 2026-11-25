@@ -4,7 +4,7 @@ targets: ["*"]
 description: "Hot Sheet workflow guidance"
 ---
 
-<!-- hotsheet-instructions-version: 66 -->
+<!-- hotsheet-instructions-version: 67 -->
 
 ## Hot Sheet — ticket workflow
 
@@ -24,7 +24,8 @@ Hot Sheet tickets are plain store files; CLI and `hotsheet_*` MCP tools work hea
 ## Commit hygiene
 
 - Keep each change coherent, with docs/tests. Lint every affected package and run its affected unit and end-to-end gates; leave no lint warning or failing test. Review the diff and make one commit per ticket whose message names every ticket slug it addresses. Combine tickets only for inseparable overlap or duplicates. Commit finished work before starting the next ticket; keep the worktree clean and preserve unrelated local edits.
-- Side-branch, worktree and delegated work must reach the shipping branch (or the project's required PR) before completion. The owner verifies integration, reachability (`git branch --contains <sha>`), required push and gates on the integrated result; a worker's report is insufficient. Name integrated commits, then remove the finished worktree. On failure leave Started with branch, worktree and commit in a note. In shared checkouts stage only your own explicit file paths and inspect the staged diff.
+- Side-branch, worktree and delegated work must reach the shipping branch (or the project's required PR, or the `merge-pending/` branch below) before completion. The owner verifies integration, reachability (`git branch --contains <sha>`), required push and gates on the integrated result; a worker's report is insufficient. Name integrated commits, then remove the finished worktree. On failure leave Started with branch, worktree and commit in a note. In shared checkouts stage only your own explicit file paths and inspect the staged diff.
+- **Completed work is always on the remote.** A ticket whose commit is not yet on the shipping branch completes only when the commit is reachable from remote branch `merge-pending/<SLUG>[-<label>]`, `<SLUG>` being the ticket whose completion retires it (a batch uses its integration ticket); the note names branch, commit and integration ticket. Review those commits for secrets, customer data and machine-local paths before pushing. Integrate `merge-pending/` by merge or cherry-pick, never rebase or force-push; the integration ticket deletes it once its commits are on the shipping branch. Shipping-branch work follows the push policy.
 - **Final remote CI exception:** after local gates pass and the integrated commit is pushed, leave Started in `final_testing`, record commit/run, release and take other ready work (`claim-next` skips it). Reclaim the exact ticket when CI resolves; complete only after green covering CI. Repair failures caused by this change; ticket independent failures with priority. Local gates, integration and pushing cannot be deferred.
 - **Use the full-suite CI run as the shared batch gate.** Record `CI gate commit: <full 40-character SHA>` in each waiting ticket. Only a successful shipping-branch push run containing the ticket commit as an ancestor covers it; older green or unrelated workflows do not. Attribute red batches using changes since the last green and failing checks, then fix the responsible ticket or file an independent bug. No local last-green marker or repeated full suite per ticket; retain affected local gates.
 **Pushing is up to this repository.** Follow whatever push/PR/review conventions this project

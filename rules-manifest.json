@@ -63,8 +63,8 @@
     {
       "name": "hotsheet-workflow",
       "path": "rules/hotsheet-workflow.md",
-      "version": 66,
-      "sha256": "4e7e47a1aadb863388698dd0a8a27af38e5380b9241ef8f7f7f34d8b8e55024c",
+      "version": 67,
+      "sha256": "5f752767a7c0d60b35b55aa0e61c97c7ef9744d2649c061399a820417871efbb",
       "owner": "hotsheet",
       "tags": [
         "hotsheet",

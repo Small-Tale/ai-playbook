@@ -198,6 +198,17 @@ class RulesTests(unittest.TestCase):
                          'global setup', 'never fixed delays'):
             self.assertIn(contract, operations)
 
+    def test_hs2_8hcba1_completed_side_branch_work_lives_on_the_remote(self):
+        workflow = checker.rule_body((ROOT / 'rules/hotsheet-workflow.md').read_text())
+        for contract in ('Completed work is always on the remote',
+                         '`merge-pending/<SLUG>[-<label>]`',
+                         'a batch uses its integration ticket',
+                         'the note names branch, commit and integration ticket',
+                         'secrets, customer data and machine-local paths before pushing',
+                         'by merge or cherry-pick, never rebase or force-push',
+                         'the integration ticket deletes it once its commits are on the shipping branch'):
+            self.assertIn(contract, workflow)
+
     def test_hs2_9jb8ee_compressed_rules_keep_release_and_ui_exceptions(self):
         contracts = {
             'release-scripts': ('tag-only from HEAD: no version bump, changelog or commit',

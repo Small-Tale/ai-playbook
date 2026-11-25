@@ -38,6 +38,16 @@ read triggers; no consumer depends on an uninstalled local playbook reference.
 | **Changed bodies** | **24,471** | **15,591** | **8,880** |
 
 All rule bodies now total **43,347** bytes (reviewed ceiling **44,672**).
+
+## Remote-backed completion (HS2-8HCBA1)
+
+`hotsheet-workflow` v67 adds one binding bullet: completed work whose commit is not yet
+on the shipping branch must be reachable from a remote `merge-pending/<SLUG>` branch,
+reviewed for secrets before the push, integrated only by merge or cherry-pick, and
+deleted by its integration ticket. The maintainer decided this on 2026-11-24 after a
+completed ticket's only copy sat on an unpushed local batch branch. The body grows
+from 6,167 to 6,844 bytes, so its ceiling rises from 6,272 to 6,912. The combined
+ceiling is unchanged; all bodies now total **44,024** bytes.
 Combined savings versus v1.8.0: **17,343** source bytes. Critical policy tests
 preserve tag-only betas, partial-release recovery, credential-isolated publishing,
 curated changelog history, deployment secrets/confirmation, named staging and
